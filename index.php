@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Formulario Login</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="estilos/style.css">
+        <!--FNOT AWESOME-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     </head>
 
@@ -17,7 +18,7 @@
                 <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña">
                 <input class="buttons" type="submit" name="ingresar" value="Ingresar">
                 <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
-                <p><a href="#">No tengo cuenta</a></p>
+                <p><a href="registro.php">No tengo cuenta</a></p>
                 <?php
                     if(isset($_POST['ingresar'])){
                         $usuario = $_POST['usuario'];
@@ -47,7 +48,7 @@
             </section>
 
             <section class="mostrador">
-                <i><img src="images/uader.png" alt="imagen de uader"></i>
+                <i><img src="estilos/images/uader.png" alt="imagen de uader"></i>
             </section>
 
             <hr>
