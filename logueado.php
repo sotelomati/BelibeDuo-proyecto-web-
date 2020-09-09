@@ -5,6 +5,7 @@
     <title>puto el que lee</title>
 </head>
 <body class="bodyLog">
+    <?php require_once  'include/navigation.php'; ?>    
     <?php require_once 'include/footer.php';?> 
 </body>
 

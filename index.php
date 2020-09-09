@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang = "es" dir = "ltr">
     <head>
-        <meta charset="utf-8">
-        <title>Formulario Login</title>
-        <link rel="stylesheet" href="estilos/style.css">
-        <!--FNOT AWESOME-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <title>Pagina principal</title>
+        <?php require_once  'include/head.php'; ?>
     </head>
-
+    
     <body>
+        <?php require_once  'include/navigation.php'; ?>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
             
             
