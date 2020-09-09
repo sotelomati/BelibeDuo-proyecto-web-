@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link rel="stylesheet" href="../estilos/styleRegistros.css">
-     <!--FNOT AWESOME-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <!--LLAMADA A HEAD-->
+    <?php require_once  'include/head.php'; ?>
 </head>
 <body>
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
             
             
-            <section class ="form-login">
+            <section class ="formLoginRegistro">
                 <h5>Formulario Login</h5>
-                <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-                <input class="controls" type="text" name="correo" value="" placeholder="Coreo">
+                <input class="controlsMiddle" type="text" name="usuario" value="" placeholder="Usuario">
+                <input class="controlsMiddle" type="text" name="correo" value="" placeholder="Coreo">
                 <input class="controlsTiny" type="number" name="codArea" value="" placeholder="codigo area Ej. (+0343)">
-                <input class="controls" type="number" name="telefono" value="" placeholder="telefono">
+                <input class="controlsMiddle" type="number" name="telefono" value="" placeholder="telefono">
                 <select class="controlsTiny" name="provincia" id="provincia" placeholder="provincia">
                 <option>Buenos Aires</option>
                 <option>Catamarca</option>
@@ -43,8 +39,8 @@
                 <option>Tierra del fuego</option>
                 <option>Tucuman</option>
             </select>
-                <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña">
-                <input class="controls" type="password" name="contraseña" value="" placeholder="Confirmar Contraseña">
+                <input class="controlsMiddle" type="password" name="contraseña" value="" placeholder="Contraseña">
+                <input class="controlsMiddle" type="password" name="contraseña" value="" placeholder="Confirmar Contraseña">
                 <input class="buttons" type="submit" name="ingresar" value="Ingresar">
 
                 <?php
@@ -58,7 +54,8 @@
 
             </section>
         </form>
-        <?php require_once '../include/footer.php';?> 
+            <!--LLAMADA A FOOTER-->
+        <?php require_once 'include/footer.php';?> 
 </body>
 
 

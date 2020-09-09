@@ -1,0 +1,47 @@
+[33mcommit be97b8c45497c73540d5e93c24f2df21734123e3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Matias Sotelo <matias-sotelo@Matias.machine>
+Date:   Sat Sep 5 18:23:27 2020 -0300
+
+    Cambiamos el fondo de pantalla
+
+[33mcommit 2505c1064e9ee62acded97f44f2f4ff3f850aa56[m
+Author: Matias Sotelo <matias-sotelo@Matias.machine>
+Date:   Sat Sep 5 18:14:51 2020 -0300
+
+    se agrego formulario de registro con su estilos .css
+
+[33mcommit 1541557c193e95837ae418b9e59374da3b400074[m
+Author: Matias Sotelo <matias-sotelo@Matias.machine>
+Date:   Sat Sep 5 17:25:15 2020 -0300
+
+    se agrego footer, falta completar
+
+[33mcommit 5aca489567d78ac45fe3cbb926a490c74886d9c8[m
+Author: castolo15 <castolo@gitbro>
+Date:   Sat Sep 5 15:23:46 2020 -0300
+
+    se agrego boton de no tengo cuenta y registro.php
+
+[33mcommit 3748549db2acde184e1eddfee23c3478573f2b1e[m
+Author: Matias Sotelo <matias-sotelo@Matias.machine>
+Date:   Sat Sep 5 01:16:20 2020 -0300
+
+    se agrego link a pagina de logueado
+
+[33mcommit dc70038efe52254c007f55e2bfe366449a56b46c[m
+Author: Matias Sotelo <matias-sotelo@Matias.machine>
+Date:   Fri Sep 4 23:54:06 2020 -0300
+
+    agregue carpeta images
+
+[33mcommit 848b4e4bba8ed14f43bdca9bd8764011d47d9f55[m
+Author: Matias Sotelo <matias-sotelo@Matias.machine>
+Date:   Fri Sep 4 22:51:51 2020 -0300
+
+    proyecto inicial
+
+[33mcommit 65b745553204e2c2fbffc9ee4d2238834a44bced[m
+Author: Matias Sotelo <matias-sotelo@Matias.machine>
+Date:   Fri Sep 4 22:44:04 2020 -0300
+
+    este es un commit de prueba

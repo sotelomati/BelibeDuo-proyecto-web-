@@ -3,28 +3,34 @@
 <head>
 </head>
 <body> 
-    <footer class="pie">
-        <section class="mostrador">
-            <i class="fab fa-github"></i>
-            <p><a href="https://github.com/sotelomati">Sotelomati</a></p>
-            <p><a href="https://github.com/GonzalezAg">GonzalezAg</a></p>
-            <p><a href="https://github.com/schmidtoctavio">SchmidtOctavio</a></p>
-        </section>
+    <div class="pieGeneral">
+        <div class="pieContenedor">
+            <ul>
+                <li><i class="fab fa-github"></i></li>
+                <li><p><a href="https://github.com/sotelomati">Sotelomati</a></p></li>
+                <li><p><a href="https://github.com/GonzalezAg">GonzalezAg</a></p></li>
+                <li><p><a href="https://github.com/schmidtoctavio">SchmidtOctavio</a></p></li>
+            </ul>
 
-        <section class="mostrador">
-            <i class="fab fa-github"></i>
-            
-        </section>
-
-        <section class="mostrador">
-            <i><img src="../estilos/images/uader.png" alt="imagen de uader"></i>
-        </section>
-
+            <ul>
+                <li><i class="fab fa-linkedin"></i></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+                
+            <ul>
+                <li><i><img src="estilos/images/uader.png" alt="imagen de uader"></i></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>                           
+        </div>
         <hr>
-        <section class="pieFinal">
+        <div class="pieFinal">
             <i class="far fa-registered">Copyright Todos los derechos reservados</i>
-        </section>
-    </footer>
+        </div>
+    </div>
 </body>
 
 </html>

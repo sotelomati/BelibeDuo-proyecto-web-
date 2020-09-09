@@ -17,6 +17,6 @@
     }
 
     function cambiarPagina($ruta){
-        header("location: http://localhost/loginPA/php/".$ruta);
+        header("location: http://localhost/loginPA/".$ruta);
     }
 ?>

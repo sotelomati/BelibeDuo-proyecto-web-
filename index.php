@@ -18,23 +18,17 @@
                 <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña">
                 <input class="buttons" type="submit" name="ingresar" value="Ingresar">
                 <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
-                <p><a href="php/registro.php">No tengo cuenta</a></p>
+                <p><a href="registro.php">No tengo cuenta</a></p>
                 <?php
                     if(isset($_POST['ingresar'])){
                         $usuario = $_POST['usuario'];
                         $contraseña = $_POST['contraseña'];
                         include("php/validar.php");
                     }
-                    
                 ?>
-
             </section>
-
-
         </form>
-        
-        <?php require_once 'include/footer.php';?> 
-        
-        
+        <!--LLAMADA A FOOTER-->
+        <?php require_once 'include/footer.php';?>  
     </body>
 </html>
