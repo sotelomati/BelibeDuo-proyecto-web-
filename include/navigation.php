@@ -28,24 +28,29 @@
             
 
                 <ul class= dch>
-                    <a href="login.php" link="login.php">
-                        <?php 
+                    
+                     <?php 
                         $url= $_SERVER["REQUEST_URI"];
+                        $remplazar =""; //variable que se mostrara en la esquina superior derecha
+                        $ruta= ""; 
                         
                         if(($url == "/loginPA/index.php") OR ($url == "/loginPA/")){
                             $remplazar= "Login";
+                            $ruta="login.php";
                         }
                         elseif($url == "/loginPA/logueado.php"){
                             $remplazar = "Log Out";
+                            $ruta="index.php";
                         }
                         else{
                             $remplazar = "";
                         }
                         
                         
-                        ?>
+                    ?>
 
-                        <li class="dch"  style=" right: 100px;"> <?php echo $remplazar; ?></li>
+                    <a href=<?php echo $ruta; ?>>
+                        <li  style=" right: 100px;"> <?php echo $remplazar; ?></li>
                        
                     </a>
                 </ul>

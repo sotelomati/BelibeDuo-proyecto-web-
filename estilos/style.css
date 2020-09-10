@@ -52,7 +52,13 @@
 }
 
 .dch{
-    position: fixed;
+    position: absolute;
+}
+
+.dch li{
+    
+    position: relative;
+    margin-right: 20px;
 }
 
 .navegacion ul{
@@ -248,6 +254,11 @@ body{
     padding-right: 50px;
 }
 
+.pieContenedor a i{
+    margin-left: 0px;
+    padding-right: 0px;
+}
+
 .pieContenedor img{
     width: 115px;
     align-items:center;
@@ -262,6 +273,14 @@ body{
     padding-top: 10px;
 }
 
+.facultad{
+    text-align: center;
+    font-size: 25px;
+}
+
+.facultad:hover{
+    text-decoration: underline;
+}
 
 
 
