@@ -17,32 +17,55 @@
   
 }
 .navegacion{
+    font-size: 20px;
     background: #33ddb3;
     width: 95%;
-    justify-content: center;
-    height: 6%;
-    top: 10px;
-    padding-left: 2.5%;
-    position: absolute;
-    border-bottom: px solid #017bab;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 20px;
 }
 
-.navegacion hr{
-    background:#017bab;
+.navegacion a{
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+}
+
+.lineaNav{
     margin: auto;
-    width: 95%;
+    width: 100%;
+    background:#017bab;
     padding: 1px;
+    margin-top: 10px;  
+    position: flex;  
 }
 
 .navegacion li{
     display: inline-block;
 }
 
+.navegacion a:hover{
+    font-size: 23px;
+}
+
+.dch{
+    position: fixed;
+}
+
+.navegacion ul{
+    width: 100%;
+    justify-content: center;
+    left: 50%;
+    align-items: center;
+    padding: 0px 5px;
+}
+
 ul{
     list-style: none;
 }
-
-
 
 hr{
     margin-top: 10px;

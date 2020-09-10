@@ -11,6 +11,7 @@
             echo "<font color='blue'>INGRESO CORRECTAMENTE</font>";
             $host= $_SERVER["HTTP_HOST"];
             $url= $_SERVER["REQUEST_URI"];
+            
             echo "" . $url;
             cambiarPagina("logueado.php");
         }

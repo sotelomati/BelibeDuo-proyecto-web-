@@ -9,14 +9,47 @@
     <div class="contenedorNav">
         <nav class="navegacion">
             <ul>
+                    <li>
+                        <i class="fas fa-blog" style="font-size: 40px; float: left"></i>
+                    </li>
+
+                <a href="index.php">
                 <li>Home</li>
-                <li></li>
-                <li></li>
+                </a>
+                <a href="#"></a>
+
+                <a href="#">
                 <li>More</li>
-                <li class="izq">Login</li>
-                <hr>
-            </ul>
-        </nav>
+                </a>
+
+                <hr class="lineaNav">
+            </ul>    
+
+            
+
+                <ul class= dch>
+                    <a href="login.php" link="login.php">
+                        <?php 
+                        $url= $_SERVER["REQUEST_URI"];
+                        
+                        if(($url == "/loginPA/index.php") OR ($url == "/loginPA/")){
+                            $remplazar= "Login";
+                        }
+                        elseif($url == "/loginPA/logueado.php"){
+                            $remplazar = "Log Out";
+                        }
+                        else{
+                            $remplazar = "";
+                        }
+                        
+                        
+                        ?>
+
+                        <li class="dch"  style=" right: 100px;"> <?php echo $remplazar; ?></li>
+                       
+                    </a>
+                </ul>
+        </nav>   
     </div>
 </body>
 </html>
