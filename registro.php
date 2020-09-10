@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
         <!--LLAMADA A HEAD-->
     <?php require_once  'include/head.php'; ?>
 </head>
+
 <body>
     
 <?php require_once  'include/navigation.php'; ?>    
@@ -11,12 +12,12 @@
             
             
             <section class ="formLoginRegistro">
-                <h5>Formulario Login</h5>
-                <input class="controlsMiddle" type="text" name="usuario" value="" placeholder="Usuario">
-                <input class="controlsMiddle" type="text" name="correo" value="" placeholder="Coreo">
-                <input class="controlsTiny" type="number" name="codArea" value="" placeholder="codigo area Ej. (+0343)">
-                <input class="controlsMiddle" type="number" name="telefono" value="" placeholder="telefono">
-                <select class="controlsTiny" name="provincia" id="provincia" placeholder="provincia">
+                <h5>Formulario Registro</h5>
+                <input class="controlsMiddle" type="text" name="usuario" value="" placeholder="Usuario" required>
+                <input class="controlsMiddle" type="text" name="correo" value="" placeholder="Correo">
+                <input class="controlsTiny" type="number" name="codArea" value="" placeholder="codigo area Ej. (+0343)" required>
+                <input class="controlsMiddle" type="number" name="telefono" value="" placeholder="telefono" required>
+                <select class="controlsTiny" name="provincia" id="provincia" placeholder="provincia" required>
                 <option>Buenos Aires</option>
                 <option>Catamarca</option>
                 <option>Chaco</option>
@@ -41,15 +42,16 @@
                 <option>Tierra del fuego</option>
                 <option>Tucuman</option>
             </select>
-                <input class="controlsMiddle" type="password" name="contraseña" value="" placeholder="Contraseña">
-                <input class="controlsMiddle" type="password" name="contraseña" value="" placeholder="Confirmar Contraseña">
-                <input class="buttons" type="submit" name="ingresar" value="Ingresar">
+                <input class="controlsMiddle" type="password" name="contraseñaReg" value="" placeholder="Contraseña" required>
+                <input class="controlsMiddle" type="password" name="contraseñaReg2" value="" placeholder="Confirmar Contraseña" required>
+                <input class="buttons" type="submit" name="botonReg" value="Registrarse">
 
                 <?php
-                    if(isset($_POST['ingresar'])){
+                    if(isset($_POST['botonReg'])){
                         $usuario = $_POST['usuario'];
-                        $contraseña = $_POST['contraseña'];
-                        include("validar.php");
+                        $contraseñaReg = $_POST['contraseñaReg'];
+                        $contraseñaReg2 = $_POST['contraseñaReg2'];
+                        include("php/validarRegistro.php");
                     }
                     
                 ?>

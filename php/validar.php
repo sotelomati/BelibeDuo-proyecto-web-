@@ -15,9 +15,14 @@
             echo "" . $url;
             cambiarPagina("logueado.php");
         }
+        else{
+            echo "<p class='error'>* Usuario o Contraseña incorrecto </p>";
+        }
     }
 
     function cambiarPagina($ruta){
         header("location: http://localhost/loginPA/".$ruta);
     }
+    
+
 ?>

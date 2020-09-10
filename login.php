@@ -15,7 +15,7 @@
                 <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
                 <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña">
                 <input class="buttons" type="submit" name="ingresar" value="Ingresar">
-                <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+                <p><a href="recuperacion.php">¿Olvidaste tu Contraseña?</a></p>
                 <p><a href="registro.php">No tengo cuenta</a></p>
                 <?php
                     if(isset($_POST['ingresar'])){
