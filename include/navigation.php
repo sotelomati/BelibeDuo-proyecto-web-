@@ -50,7 +50,7 @@
                     ?>
 
                     <a href=<?php echo $ruta; ?>>
-                        <li  style=" right: 100px;"> <?php echo $remplazar; ?></li>
+                        <li class="dch" style=" right: 100px;"> <?php echo $remplazar; ?></li>
                        
                     </a>
                 </ul>
