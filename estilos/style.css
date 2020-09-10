@@ -99,7 +99,7 @@ body{
 }
 
 .form-login{
-    width:30%;
+    width:400px;
     height: 400px;
     background: #66b9bf;
     margin: auto;
@@ -231,7 +231,7 @@ body{
     height: 200px;
     background: #2f3542;    
     text-align: center;
-    position: static;
+    position: absolute;
     bottom: 0;
     margin-top: 100px;
 }
@@ -374,11 +374,16 @@ p{
     text-align: center;
 }
 
+/*
+###############################################
+             ADAPTACION A 700PX
+###############################################
+*/
+
 @media(min-width:768px){
     .form-recuperacion{
         margin:auto;
         width:500px;
         margin-top:150px;
-        border-radius: 2%;
     }
 }
