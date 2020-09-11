@@ -17,12 +17,12 @@
         <div class="contenedor">
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input class="controlsRecuperacion" type="text" name="usuarioRecu" placeholder="Ingrese su Usuario">
+                <input class="controlsRecuperacion" type="text" name="usuarioRecu" placeholder="Ingrese su Usuario" required>
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-envelope icon"></i>
-                <input class="controlsRecuperacion" type="text" name="mailRecu" placeholder="Ingrese su Correo Electronico">
+                <input class="controlsRecuperacion" type="text" name="mailRecu" placeholder="Ingrese su Correo Electronico" required>
             </div>
 
             <input class="button" type="submit" name="botonRecu" value="Recuperar">

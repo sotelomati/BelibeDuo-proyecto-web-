@@ -12,8 +12,8 @@
             
             <section class ="form-login">
                 <h5>Formulario Login</h5>
-                <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
-                <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña">
+                <input class="controls" type="text" name="usuario" value="" placeholder="Usuario" required>
+                <input class="controls" type="password" name="contraseña" value="" placeholder="Contraseña" required>
                 <input class="buttons" type="submit" name="ingresar" value="Ingresar">
                 <p><a href="recuperacion.php">¿Olvidaste tu Contraseña?</a></p>
                 <p><a href="registro.php">No tengo cuenta</a></p>

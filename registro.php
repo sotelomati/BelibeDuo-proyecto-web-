@@ -11,7 +11,7 @@
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
             
             
-            <section class ="formLoginRegistro">
+            <section class ="formMiddle">
                 <h5>Formulario Registro</h5>
                 <input class="controlsMiddle" type="text" name="usuario" value="" placeholder="Usuario" required>
                 <input class="controlsMiddle" type="text" name="correo" value="" placeholder="Correo">
