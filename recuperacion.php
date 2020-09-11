@@ -10,7 +10,7 @@
             
     <form action="<?php echo
     htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-        <section class="form-recuperacion">
+        <section class="form-login">
 
         <h1>Recuperacion de Contraseña</h1>
         
