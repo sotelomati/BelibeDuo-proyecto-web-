@@ -53,13 +53,12 @@
 .navegacion a:hover{
     font-size: 23px;
 }
-
 .dch{
-    
+
 }
 
 .dch li{
-
+    right: 60px;
     position: absolute;
 }
 
@@ -75,9 +74,7 @@ ul{
     list-style: none;
 }
 
-hr{
-    
-}
+
 
 
 
@@ -177,7 +174,7 @@ h5{
     height: 40px;
     text-align: center;
     border-bottom: 1px solid;
-    padding: 10px;
+    padding: 2px;
 }
 
 .form-login a{
@@ -194,9 +191,26 @@ h5{
 }
 
 .error{
-    color: red;
+    background: #ff4757;
+    color: white;
+    border: solid 1px white;
+    margin: 10px;
+    opacity: 0.7;
 }
 
+.correcto{
+    width: 300px;
+    height: 200px;
+    background: #7bed9f;
+    color: black;
+    border: solid 1px white;
+    margin: auto;
+    text-align: center;
+    opacity: 0.7;
+}
+.correcto i{
+    font-size: 50px;
+}
 /*
 ###############################################
                     Footer
@@ -269,18 +283,22 @@ h5{
 .pieFinal{
     width: 100%;
     background: #2f3542;
-    color: white;
+    color: #747d8c;
     padding-top: 10px;
     text-align: center;
 }
 
 .facultad{
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .facultad:hover{
     text-decoration: underline;
+}
+
+.facultad i{
+    font-size: 20px;
 }
 
 
@@ -365,22 +383,204 @@ p{
 
 /* Smartphones (portrait) */
 @media (max-width : 700px) {
-    body{
-        background: red;
+   
+    /*                    NAV ADAPT             */
+    
+    .navegacion{
+        font-size: 20px;
+        width: 90%;
+        margin-top: 5px;
+        height: 20%;
+    }
+      
+    .dch li{
+        right: 60px;
+    }
+    
+    .navegacion ul{
+        width: 100%;
+        justify-content: center;
+        left: 50%;
+        align-items: center;
+        padding: 0px 5px;
+    }
+    
+    ul{
+        list-style: none;
+    }
+    
+
+    /*                      BODY ADAPT                  */
+
+    .form-login{
+        width:50%;
+        height: 30%;
+        margin-top: 120px;
+    }
+    
+    
+    .formMiddle{
+        width: 70%;
+        height: 25%;
+        margin-top: 50px;
+    }
+    
+    h5{
+        height: 30px;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    
+    .controls{
+        font-size: 10px;
+    }
+    
+    .controlsMiddle{
+        width: 90%;
+    }
+    
+    .controlsTiny{
+        width: 90%;
+        margin-bottom: 10px;
+        padding: 10px 10px;
+    }
+    
+    .buttons{
+        width: 92%;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+    
+
+    /*           FOOTER ADPT           */
+    .pieGeneral{
+        width: 100%;
+        height: 100px;   
+        text-align: center;
+        bottom: 0;  
+        margin-top: 50px;
+    }
+    
+   
+    
+    .pieContenedor li{
+        text-align:center;
+        line-height: 1;
+    }
+    
+    .pieContenedor i{
+        font-size: 30px;
+        margin-left: 10px;
+        padding-bottom: 9px;
+        padding-right: 25px;
+    }
+    
+    .pieContenedor img{
+        width: 35px;
+        align-items:center;
+        padding-bottom: 9px;
+        padding-right: 25px;
+        margin-top: 12px;
+    }
+    
+    .pieFinal{
+        width: 100%;
+        background: #2f3542;
+        text-align: center;
+    }
+    
+    .facultad{
+        text-align: center;
+        font-size: 15px;
     }
 }
 
     /* Smartphones (portrait & landscape) */
-@media (max-width : 900px)
-and (min-width :701px){
+@media (max-width : 450px){
+    
+    body{
+        background: blue;
+    }
+    .navegacion{
+        font-size: 20px;
+        width: 90%;
+        margin-top: 5px;
+        height: 20%;
+    }
+      
+    .dch li{
+        right: 60px;
+    }
+    
+    .navegacion ul{
+        width: 100%;
+        justify-content: center;
+        left: 50%;
+        align-items: center;
+        padding: 0px 5px;
+    }
+    
+    ul{
+        list-style: none;
+    }
     
 
+    /*                      BODY ADAPT                  */
+
+    .form-login{
+        width:70%;
+        height: 20%;
+        margin-top: 80px;
+    }
+    
+    
+    .formMiddle{
+        width: 70%;
+        height: 25%;
+        margin-top: 60px;
+    }
+    
+    .controlsTiny{
+        width: 90%;
+        margin-bottom: 10px;
+        padding: 10px 10px;
+    }
+    
+    .buttons{
+        width: 92%;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+    
+
+    /*           FOOTER ADPT           */
+    
+    .pieContenedor img{
+        width: 35px;
+        align-items:center;
+        padding-bottom: 9px;
+        padding-right: 25px;
+        margin-top: 12px;
+    }
+    
+    .facultad{
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .facultad i{
+        font-size: 10px;
+    }
     .pieContenedor{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10;
         align-items: flex-start;
         justify-content: center;
+    }
+
+    .pieContenedor a{
+        font-size: 12px;
     }
 }
 

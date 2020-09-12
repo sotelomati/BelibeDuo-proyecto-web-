@@ -4,7 +4,6 @@
 </head>
 
 <footer class="pieGeneral">
-    <div>
         <div class="pieContenedor">
             <ul>
                 <li><i class="fab fa-github"></i></li>
@@ -21,16 +20,16 @@
             </ul>
                 
             <ul>
-                <li><i><img style="width: 80px" src="estilos/images/uader.png" alt="imagen de uader"></i></li>
+                <li><img  src="estilos/images/uader.png" alt="imagen de uader"></li>
                 <li><p>
-                        <a class="facultad" href="http://fcyt.uader.edu.ar/web/">FCyT UADER     <i style="font-size: 25px;"class="fas fa-chevron-right"></i>
-                        <i style="font-size: 25px;" class="fas fa-chevron-right"></i>
+                        <a class="facultad" href="http://fcyt.uader.edu.ar/web/">FCyT UADER     <i class="fas fa-chevron-right"></i>
+                        <i class="fas fa-chevron-right"></i>
                         </a>
                     </p>
                 </li>
             </ul>                           
         </div>
-        <hr>
+        <hr style="border: 1px solid #dfe4ea">
         <div class="pieFinal">
             <i class="far fa-registered">Copyright Todos los derechos reservados</i>
         </div>
