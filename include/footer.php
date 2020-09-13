@@ -34,6 +34,7 @@
             <i class="far fa-registered">Copyright Todos los derechos reservados</i>
         </div>
     </footer>
+    <script src="javascript/transicion.js"></script>
 </html>
 
 

@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body>   
+    <ul class="menuLeft" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+
+        <a href="index.php">
+        <li>Home</li>
+        </a>
+        <a href="#"></a>
+
+        <a href="#">
+        <li>More</li>
+        </a>
+    </ul>
+
     <div class="contenedorNav">
         <nav class="navegacion">
-            <ul>
-                    <li>
-                        <i class="fas fa-blog" style="font-size: 40px; float: left"></i>
-                    </li>
-
+            
+            <li>
+                <i class="fas fa-blog" style="font-size: 40px; float: left"></i>
+            </li>
+            <ul class="menuLeft_borrar">
                 <a href="index.php">
                 <li>Home</li>
                 </a>
@@ -22,9 +34,9 @@
                 <li>More</li>
                 </a>
 
-                <hr class="lineaNav">
-            </ul>    
-
+                <!--<hr class="lineaNav">-->
+            </ul>   
+            
             
 
                 <ul class= dch>
@@ -51,8 +63,10 @@
 
                     <a href=<?php echo $ruta; ?>>
                         <li> <?php echo $remplazar; ?></li>
-                       
                     </a>
+                        <div class="prueba">
+                        <i class="fas fa-bars"></i>
+                        </div>
                 </ul>
         </nav>   
     </div>
