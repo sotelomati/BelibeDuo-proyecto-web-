@@ -106,6 +106,7 @@ body{
     height: 350px;
     background: #66b9bf;
     margin: auto;
+    margin-top: 150px;
     text-align: center;
     box-shadow: 7px 13px 37px #000;
     border: 3px solid #e37222;
@@ -116,7 +117,7 @@ body{
 
 .formMiddle{
     width:700px;
-    height: 350px;
+    height: 495px;
     background: #66b9bf;
     margin: auto;
     margin-top: 180px;
@@ -321,12 +322,18 @@ h5{
 ###############################################
 */
 
-.form-login{
+.form-recuperacion{
+    width:500px;
+    height: 295px;
     background: #66b9bf;
+    margin: auto;   
+    text-align: center;
     margin-top: 150px;
     padding: 3px;
+    border-radius: 10px;
     border: 3px solid #e37222;
     box-shadow: 6px 10px 10px #373737;
+    color: #373737;
 }
 
 h1{
@@ -393,7 +400,7 @@ p{
 
 
 /* Smartphones (portrait) */
-@media (max-width : 700px) {
+@media (max-width : 900px) {
    
     /*                    NAV ADAPT             */
     
