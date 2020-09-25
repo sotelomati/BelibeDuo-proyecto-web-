@@ -26,6 +26,10 @@
                 ?>
             </section>
         </form>
+        <div class="contenedorCaptcha">
+        <?php require_once  'include/captcha.php'; ?>
+        </div>
+       
         <!--LLAMADA A FOOTER-->
         <?php require_once 'include/footer.php';?>  
     </body>

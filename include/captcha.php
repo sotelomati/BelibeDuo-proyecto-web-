@@ -1,5 +1,5 @@
 <?php 
-
+ 
 
 class contenedor{
     public $letras;
@@ -87,8 +87,7 @@ class captchaMaker{
             for($i = 0; $i <3; $i++){
                 for($j = 0; $j <3; $j++){
                     $this->matriz[$i][$j] = $palabraAux[$contador];
-                    echo "".$this->matriz[$i][$j];
-                    echo " ";    
+                      
                     $contador+=1;
                 }
                 echo "<br>";
@@ -99,7 +98,7 @@ class captchaMaker{
         for($i = 0; $i <3; $i++){
             for($j = 0; $j <3; $j++){
                 
-            echo '<button  value=".$this->matriz[$i][$j];"></button>';
+            echo '<button  class="captcha" >'.$this->matriz[$i][$j];'</button>';
             }
         }
     }
