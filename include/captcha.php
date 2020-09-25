@@ -61,11 +61,13 @@ class captchaMaker{
             array("","","")
         );
 
-        $this->llenarMatriz();
+
     }
 
-    private function llenarMatriz(){
+    public function llenarMatriz(){
         $this->palabra = $this->abecedario->getPalabra();
+        
+
         $palabraAux = $this->palabra;
             //compruebo longitud para la matriz
         if(strlen($this->palabra) < 9){
@@ -92,21 +94,104 @@ class captchaMaker{
                 }
                 echo "<br>";
             }
+            return ($this->palabra);
     }
 
     public function imprimirMatriz(){
+        $aux;
         for($i = 0; $i <3; $i++){
             for($j = 0; $j <3; $j++){
-                
-            echo '<button  class="captcha" >'.$this->matriz[$i][$j];'</button>';
+               $aux = $this->matriz[$i][$j];
+               $aux = "caca";
+               ?>
+            <input class="captcha" type="submit" name="captchaValue" value="<?php echo "".$this->matriz[$i][$j]?>"> 
+         <?php   
+            //echo '<button  class="captcha" name="captchaValue" placeholder="captchaValue">'.$this->matriz[$i][$j];'</button>';
             }
         }
     }
 
 }
 
+class captchaValidator{
+    private $original;
+    private $letras;
+    private $contador;
+    private $limite;
+
+    public function __construct(){
+        $this->original="";
+        $this->letras="       ";
+        $this->contador = 0;
+        $this->limite= 0;
+    }
+    public function setPalabra($captcha){
+        $this->original = $captcha;
+        $this->limite = strlen($this->original);
+        unset($this->letras);
+        $this->contador = 0;
+    }
+    public function getLongitud(){
+        return strlen($this->original);
+    }
+    private function validarCaptcha(){
+         if($this->letras == $this->original){
+            cambiarPagina("logueado.php");
+         }
+    }
+    public function setLetra($letra){
+        if( $this->contador < $this->limite){
+            $this->letras[$this->contador]=$letras;
+            $this->contador++;
+        }
+        else{
+            $this->validarCaptcha();
+        }
+    }
+}
+
+function cambiarPagina($ruta){
+    header("location: http://localhost/loginPA/".$ruta);
+}
+
 $captchaMaker = new captchaMaker();
+$captchaValidator = new captchaValidator();
+
+//lleno la matriz y pongo la palabra en validador
+$captchaValidator->setPalabra($captchaMaker->llenarMatriz());
 $captchaMaker->imprimirMatriz();
+
+$contador = 0;
+$letraAux;
+$cosa =$captchaValidator->getLongitud();
+echo $cosa;
+
+//no funciona aun
+if(isset($_POST['captchaValue'])){
+        
+    $letraAux = $_POST['captchaValue'];
+    echo $cosa;
+    $captchaValidator->setLetra($letraAux);
+}
+
+/*while($contador < $cosa){
+    
+    if(isset($_POST['captchaValue'])){
+        
+        $letraAux = $_POST['captchaValue'];
+        $captchaValidator->setLetra($letraAux);
+        $contador++;
+    }
+    
+}*/
+
+
+
+
+
+
+
+
 
 
 
