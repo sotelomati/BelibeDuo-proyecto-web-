@@ -318,20 +318,20 @@ h5{
                 CAPTCHA
 ###############################################
 */
-.contenedorCaptcha{
+.cont{
+    background: white;
     margin:auto;
-    position: float;
+    position: right;
     grid-template-columns: repeat(3, 1fr);
     width: 170px;
 }
 
 .captcha{
-    width: 50px;
-    height: 50px;
-    margin: 2px;
-    color: black;
-    border: solid 1px black;
-    background-color: white;
+    
+}
+
+.captcha input{
+    display: none;
 }
 
 /*

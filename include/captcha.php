@@ -64,6 +64,12 @@ class captchaMaker{
 
     }
 
+    public function getPalabra(){
+        
+            return $this->palabra;
+        
+    }
+
     public function llenarMatriz(){
         $this->palabra = $this->abecedario->getPalabra();
         
@@ -94,21 +100,32 @@ class captchaMaker{
                 }
                 echo "<br>";
             }
-            return ($this->palabra);
     }
 
     public function imprimirMatriz(){
         $aux;
+            echo '<section class="contenido">';
         for($i = 0; $i <3; $i++){
             for($j = 0; $j <3; $j++){
-               $aux = $this->matriz[$i][$j];
-               $aux = "caca";
-               ?>
-            <input class="captcha" type="submit" name="captchaValue" value="<?php echo "".$this->matriz[$i][$j]?>"> 
-         <?php   
-            //echo '<button  class="captcha" name="captchaValue" placeholder="captchaValue">'.$this->matriz[$i][$j];'</button>';
+                ?>
+                
+                    <div class="captcha" name="captchaValue">
+                    <?php
+                        echo "".$this->matriz[$i][$j]
+                    ?>
+                    </div>
+                
+                <?php 
             }
         }
+            echo '</div>';
+    }
+
+    public function refresh(){
+        $this->llenarMatriz();
+        $this->imprimirMatriz();
+        //$palabraToImage = $this->getPalabra();
+        //require_once  'rimagen.php';
     }
 
 }
@@ -158,8 +175,10 @@ $captchaMaker = new captchaMaker();
 $captchaValidator = new captchaValidator();
 
 //lleno la matriz y pongo la palabra en validador
-$captchaValidator->setPalabra($captchaMaker->llenarMatriz());
-$captchaMaker->imprimirMatriz();
+
+$captchaMaker->refresh();
+$captchaValidator->setPalabra($captchaMaker->getPalabra());
+
 
 $contador = 0;
 $letraAux;
