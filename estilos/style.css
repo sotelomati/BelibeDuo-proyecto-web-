@@ -322,8 +322,10 @@ h5{
     margin:auto;
     position: float;
     grid-template-columns: repeat(3, 1fr);
-    width: 170px;
+    width: 175px;
 }
+
+
 
 .captcha{
     width: 50px;
@@ -333,6 +335,16 @@ h5{
     border: solid 1px black;
     background-color: white;
 }
+.captchaOff{
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    color: black;
+    border: solid 1px black;
+    background-color: grey;
+
+}
+
 
 .captcha input{
     display: none;

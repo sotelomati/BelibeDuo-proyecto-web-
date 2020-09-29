@@ -107,18 +107,34 @@ class captchaMaker{
     }
 
     public function imprimirMatriz(){
-        $aux = 0;
+        $aux = 1;
             
-                echo '<div class="contenedorCaptcha">';
+                //echo '<div class="contenedorCaptcha">';
+                ?>
+                <div class="contenedorCaptcha">
+                <?php
                     for($i = 0; $i <3; $i++){
                         for($j = 0; $j <3; $j++){
-                            echo '<button  class="captcha" calue="caca" name="pos" onclick="captchaIngreso()">
-                            '.$this->matriz[$i][$j];'
-                            </button>';
+                            
+                            ?>
+                            <button  class="captcha" id="<?php echo $aux; ?>" value="<?php echo "".$this->matriz[$i][$j];?>" onclick="recibir(<?php echo $aux; ?>);"><?php echo "".$this->matriz[$i][$j];?></button>
+                            <?php
                             $aux++;
                         }
                     }
-                echo '</div>';
+                
+                ?>
+                <script type="text/javascript">
+                var largo = "<?php echo strlen($this->getPalabra());?>";
+                
+                </script>
+                <?php
+            ?>
+            </div>
+            <?php
+
+
+               
             
     }
 
@@ -150,14 +166,30 @@ class captchaValidator{
         $this->contador = 0;
     }
     public function getLongitud(){
+        $this->comJsLongitud(strlen($this->original));
         return strlen($this->original);
+
     }
-    private function validarCaptcha(){
-         if($this->letras == $this->original){
+
+    private function comJsLongitud($long){
+        debug_to_console("ya mande las cosas");
+        $probando =  [$long];
+        $largo = json_encode($probando);
+        echo $largo;
+        return $largo;
+        //echo "caca";
+        
+    }
+
+    private function validarCaptcha($final){
+         if($final == $this->original){
             cambiarPagina("logueado.php");
          }
+         else{
+             debug_to_console("Fallaste crack");
+         }
     }
-    public function setLetra($letra){
+    /*public function setLetra($letra){
         if( $this->contador < $this->limite){
             $this->letras[$this->contador]=$letra;
             $this->contador++;
@@ -165,7 +197,7 @@ class captchaValidator{
         else{
             $this->validarCaptcha();
         }
-    }
+    }*/
 }
 
 function cambiarPagina($ruta){
@@ -197,6 +229,10 @@ function debug_to_console($data) {
 
 debug_to_console($cosa);
 debug_to_console($captchaMaker->getPalabra());
+
+function llamarval($pal){
+    $captchaValidator->validarCaptcha($pal);
+}
 //no funciona aun
 /*
 if(isset($_GET['pos'])){
