@@ -1,5 +1,7 @@
 <?php 
  
+ 
+
 
 class contenedor{
     public $letras;
@@ -47,12 +49,15 @@ class contenedor{
     
 }
 
+
+
 class captchaMaker{
     private $abecedario;
     private $matriz;
     private $palabra;
+    private $validador;
 
-    public function __construct(){
+    public function __construct($captchaValidator){
         $this->abecedario = new contenedor(9);
         //creacion de matriz berreta
         $this->matriz = array(
@@ -60,8 +65,7 @@ class captchaMaker{
             array("","",""),
             array("","","")
         );
-
-
+        $this->validador = $captchaValidator;
     }
 
     public function getPalabra(){
@@ -103,22 +107,19 @@ class captchaMaker{
     }
 
     public function imprimirMatriz(){
-        $aux;
-            echo '<section class="contenido">';
-        for($i = 0; $i <3; $i++){
-            for($j = 0; $j <3; $j++){
-                ?>
-                
-                    <div class="captcha" name="captchaValue">
-                    <?php
-                        echo "".$this->matriz[$i][$j]
-                    ?>
-                    </div>
-                
-                <?php 
-            }
-        }
-            echo '</div>';
+        $aux = 0;
+            
+                echo '<div class="contenedorCaptcha">';
+                    for($i = 0; $i <3; $i++){
+                        for($j = 0; $j <3; $j++){
+                            echo '<button  class="captcha" calue="caca" name="pos" onclick="captchaIngreso()">
+                            '.$this->matriz[$i][$j];'
+                            </button>';
+                            $aux++;
+                        }
+                    }
+                echo '</div>';
+            
     }
 
     public function refresh(){
@@ -138,7 +139,7 @@ class captchaValidator{
 
     public function __construct(){
         $this->original="";
-        $this->letras="       ";
+        $this->letras="";
         $this->contador = 0;
         $this->limite= 0;
     }
@@ -158,7 +159,7 @@ class captchaValidator{
     }
     public function setLetra($letra){
         if( $this->contador < $this->limite){
-            $this->letras[$this->contador]=$letras;
+            $this->letras[$this->contador]=$letra;
             $this->contador++;
         }
         else{
@@ -171,8 +172,9 @@ function cambiarPagina($ruta){
     header("location: http://localhost/loginPA/".$ruta);
 }
 
-$captchaMaker = new captchaMaker();
+
 $captchaValidator = new captchaValidator();
+$captchaMaker = new captchaMaker($captchaValidator);
 
 //lleno la matriz y pongo la palabra en validador
 
@@ -185,24 +187,33 @@ $letraAux;
 $cosa =$captchaValidator->getLongitud();
 echo $cosa;
 
-//no funciona aun
-if(isset($_POST['captchaValue'])){
-        
-    $letraAux = $_POST['captchaValue'];
-    echo $cosa;
-    $captchaValidator->setLetra($letraAux);
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
 
-/*while($contador < $cosa){
-    
-    if(isset($_POST['captchaValue'])){
+debug_to_console($cosa);
+debug_to_console($captchaMaker->getPalabra());
+//no funciona aun
+/*
+if(isset($_GET['pos'])){
         
-        $letraAux = $_POST['captchaValue'];
+    $letraAux = $_GET['pos'];
+    debug_to_console($letraAux);
+    echo $cosa;
+    $captchaValidator->setLetra($letraAux);
+} 
+    if(isset($_GET['pos'])){
+        
+        $letraAux = $_GET['pos'];
         $captchaValidator->setLetra($letraAux);
         $contador++;
-    }
+    }*/
     
-}*/
+
 
 
 

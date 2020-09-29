@@ -1,34 +1,16 @@
-        <?php /*
-        $palabraToImage = "caca";
-        header('Content-type: image/png');
-        $imagen= imagecreatetruecolor(170, 50);
-        $color_texto = imagecolorallocate($imagen, 233, 14, 91);
-        imagestring($imagen, 10, 5, 5, $palabraToImage, $color_texto);
-        imagepng($imagen);
-        imagedestroy($imagen);*/
-
-        $image = imagecreatetruecolor(200, 50);
- 
-        imageantialias($image, true);
-        
-        $colors = [];
-        
-        $red = rand(125, 175);
-        $green = rand(125, 175);
-        $blue = rand(125, 175);
-        
-        for($i = 0; $i < 5; $i++) {
-        $colors[] = imagecolorallocate($image, $red - 20*$i, $green - 20*$i, $blue - 20*$i);
-        }
-        
-        imagefill($image, 0, 0, $colors[0]);
-        
-        for($i = 0; $i < 10; $i++) {
-        imagesetthickness($image, rand(2, 10));
-        $rect_color = $colors[rand(1, 4)];
-        imagerectangle($image, rand(-10, 190), rand(-10, 10), rand(-10, 190), rand(40, 60), $rect_color);
-        }
-
-        ?>
-        
-        
+<?php
+//crear una imagen
+$imagen = imagecreate(100,35);
+//color de fondo
+$fondo= imagecolorallocate($imagen, 126, 2, 153);
+$texto = imagecolorallocate($imagen,255,255,255);
+//crear valor aleatorio
+$aleatorio=rand(100000,999999);
+//rellenar la imagen
+ImageFill($imagen, 50, 0, $fondo);
+//imprimir un texto a la imagen
+imagestring($imagen,80,0,0,$aleatorio,$texto);
+//imprimir la imagen
+header('Content-type: image/pnp');
+imagepng($imagen);
+?>
