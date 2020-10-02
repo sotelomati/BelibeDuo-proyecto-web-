@@ -122,8 +122,17 @@ class captchaMaker{
                             $aux++;
                         }
                     }
-                
+                    session_start();
+                    $palabrita = $this->getPalabra();
+                    $_SESSION['palabra2'] = $palabrita;
+
+
                 ?>
+                <!--LLAMADA A LA IMAGEN-->
+
+                <img src="include/rimagen.php"/>
+
+
                 <script type="text/javascript">
                 var largo = "<?php echo strlen($this->getPalabra());?>";
                 
@@ -137,13 +146,14 @@ class captchaMaker{
                
             
     }
-
     public function refresh(){
-        $this->llenarMatriz();
-        $this->imprimirMatriz();
         //$palabraToImage = $this->getPalabra();
         //require_once  'rimagen.php';
+        $this->llenarMatriz();
+        $this->imprimirMatriz();
+
     }
+
 
 }
 

@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 //crear una imagen
 $imagen = imagecreate(100,35);
 //color de fondo
@@ -9,8 +11,8 @@ $aleatorio=rand(100000,999999);
 //rellenar la imagen
 ImageFill($imagen, 50, 0, $fondo);
 //imprimir un texto a la imagen
-imagestring($imagen,80,0,0,$aleatorio,$texto);
+imagestring($imagen,80,0,0,$_SESSION['palabra2'],$texto);
 //imprimir la imagen
-header('Content-type: image/pnp');
+header('Content-type: image/png');
 imagepng($imagen);
 ?>

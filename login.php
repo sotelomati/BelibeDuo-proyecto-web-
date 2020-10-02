@@ -28,13 +28,15 @@
             </section>
         </form>
         
-        
+        <!--LLAMADA AL CAPTCHA-->
         <?php require_once  'include/captcha.php'; ?>
+
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="get">
         </form>
         
        
         <!--LLAMADA A FOOTER-->
         <?php require_once 'include/footer.php';?>  
+        
     </body>
 </html>
