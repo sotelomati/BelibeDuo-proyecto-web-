@@ -1,5 +1,5 @@
 <?php 
- 
+ session_start();
  
 
 
@@ -108,10 +108,13 @@ class captchaMaker{
 
     public function imprimirMatriz(){
         $aux = 1;
-            
+                
                 //echo '<div class="contenedorCaptcha">';
                 ?>
-                <div class="contenedorCaptcha">
+                <div class="contenedorCaptcha" id="contenedorMatriz" >
+                    
+                    <div class="contenedorMatriz">
+                    
                 <?php
                     for($i = 0; $i <3; $i++){
                         for($j = 0; $j <3; $j++){
@@ -122,12 +125,11 @@ class captchaMaker{
                             $aux++;
                         }
                     }
-                    session_start();
+                    
                     $palabrita = $this->getPalabra();
                     $_SESSION['palabra2'] = $palabrita;
-
-
                 ?>
+                    
                 <!--LLAMADA A LA IMAGEN-->
 
                 <img src="include/rimagen.php"/>
@@ -137,8 +139,27 @@ class captchaMaker{
                 var largo = "<?php echo strlen($this->getPalabra());?>";
                 
                 </script>
-                <?php
-            ?>
+                 
+                </div>
+                <div class="contenedorPalabra">
+                    <?php
+                        //  IMPRIME DONDE SE ESCRIBE LA PALABRA
+                        for($i = 0; $i < strlen($this->getPalabra()); $i++){
+                            ?>
+                            
+                            <div  class="letra" id="<?php echo "letra".$i; ?>" value="" onclick=""></div>
+                            <?php
+                            $aux++;
+                        }
+                    ?>
+
+                </div>
+                <button>
+                    <i style="font-size: 40px; background-color: transparent;" class="fas fa-sync" onclick="refrescar();"></i>
+                </button>
+                
+               
+
             </div>
             <?php
 
@@ -158,6 +179,7 @@ class captchaMaker{
 }
 
 class captchaValidator{
+    private $resultado;
     private $original;
     private $letras;
     private $contador;
@@ -168,6 +190,10 @@ class captchaValidator{
         $this->letras="";
         $this->contador = 0;
         $this->limite= 0;
+    }
+    public function getResultado(){
+        
+        return ($resultado == 1);
     }
     public function setPalabra($captcha){
         $this->original = $captcha;
@@ -193,9 +219,11 @@ class captchaValidator{
 
     private function validarCaptcha($final){
          if($final == $this->original){
-            cambiarPagina("logueado.php");
+            $_SESSION['resultado'] = 1;
+            debug_to_console('psitivo');
          }
          else{
+            $_SESSION['resultado'] = 0;
              debug_to_console("Fallaste crack");
          }
     }
@@ -210,9 +238,7 @@ class captchaValidator{
     }*/
 }
 
-function cambiarPagina($ruta){
-    header("location: http://localhost/loginPA/".$ruta);
-}
+
 
 
 $captchaValidator = new captchaValidator();
@@ -262,6 +288,16 @@ if(isset($_GET['pos'])){
 
 
 
+    if(isset($POST['refrescame']) == 1)
+    {
+        $captchaMaker->refresh();
+    }
+
+    if(isset($POST['palabra']) != "" )
+    {
+        debug_to_console("la palabra es : ".$POST['palabra']);
+        $captchaValidator->validarCaptcha($POST['palabra']);
+    }
 
 
 

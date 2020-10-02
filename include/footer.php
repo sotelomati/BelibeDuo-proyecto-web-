@@ -36,21 +36,12 @@
     </footer>
   
     
-    <script>
 
-function captchaIngreso() {
-    $.ajax({
-         type: "POST",
-         url: '/probando.php',
-         //data:{value},
-         success:function() {
-           alert(html);
-         }
+    <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"></script>
 
-    });
-}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="javascript/transicion.js"></script>
     <script src="javascript/recolector.js"></script>
 </html>

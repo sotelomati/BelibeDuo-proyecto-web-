@@ -322,12 +322,35 @@ h5{
 */
 .contenedorCaptcha{
     margin:auto;
-    position: float;
+    width: 500px;
+}
+
+.contenedorMatriz{
     grid-template-columns: repeat(3, 1fr);
     width: 175px;
 }
 
+.contenedorMatriz img{
+    padding-left: 50px;
+}
 
+.contenedorPalabra{
+    background-color: white;
+    border: solid 1px orange;
+    border-radius: 5%;
+    float: right;
+    
+}
+
+.letra{
+    font-size: 30px;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: solid 5px brown;
+    padding: 5px;
+    color: black;
+    width: 10px;
+}
 
 .captcha{
     width: 50px;

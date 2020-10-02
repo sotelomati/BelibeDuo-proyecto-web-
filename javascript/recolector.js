@@ -13,9 +13,12 @@ function recibir(x) {
         concatenar = document.getElementById(x).innerHTML;
         prueba1 = prueba1 + concatenar;
         console.log(prueba1);
+
+        document.getElementById("letra"+contador).innerText = concatenar;
+
         contador++;
     }
-    else{
+    if(contador == largo){
         llamarValidator(prueba1)
     }
     
@@ -25,13 +28,29 @@ function doNothing(){
     console.log("ya no hago nada");
 }
 
-function llamarValidator(palabra){
-    $.ajax(
-        {
-            url: 'get_var.php?var=<?php echo $var; ?>',
-            success: function( data ) {
-                alert( 'El servidor devolvio "' + data + '"' );
-            }
+function llamarValidator(palabrita){
+    let palabra = palabrita;
+    $.ajax({
+        url: 'include/captcha.php',
+        type: 'POST',
+        data: {palabra},
+        success: function(response){
+            console.log('me escuchan');
         }
-    )
+    })
 };
+
+function refrescar(){
+    let refrescame = 1;
+    $.ajax ({
+        url: 'include/captcha.php',
+        type: 'POST',
+        data: {refrescame},
+        success: function(response){
+            $(document).ready(function(){
+                $('#contenedorMatriz').load('include/captcha.php');
+            })
+        }
+
+    })
+}

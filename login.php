@@ -20,6 +20,7 @@
                 <p><a href="registro.php">No tengo cuenta</a></p>
                 <?php
                     if(isset($_POST['ingresar'])){
+                        
                         $usuario = $_POST['usuario'];
                         $contraseña = $_POST['contraseña'];
                         include("php/validar.php");

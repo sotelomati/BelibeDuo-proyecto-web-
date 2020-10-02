@@ -15,4 +15,6 @@ imagestring($imagen,80,0,0,$_SESSION['palabra2'],$texto);
 //imprimir la imagen
 header('Content-type: image/png');
 imagepng($imagen);
+
+
 ?>
