@@ -1,8 +1,6 @@
 <?php
-    session_start();
-
     if(isset($_POST['ingresar'])){
-        if($_SESSION['resultado'] == 1){
+        
             if(empty($usuario)){
                 echo "<p class='error'>* Agrega tu nombre </p>";
             }
@@ -20,9 +18,6 @@
             else{
                 echo "<p class='error'>* Usuario o Contraseña incorrecto </p>";
             }
-
-
-       }
        
     }
 

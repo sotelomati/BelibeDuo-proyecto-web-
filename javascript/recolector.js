@@ -1,5 +1,6 @@
 contador = 0;
-console.log(largo);
+var largo;
+
 var prueba1 = "";
 
 function recibir(x) {
@@ -8,8 +9,6 @@ function recibir(x) {
         document.getElementById(x).onclick = doNothing();
         document.getElementById(x).classList = "captchaOff";
       
-        
-
         concatenar = document.getElementById(x).innerHTML;
         prueba1 = prueba1 + concatenar;
         console.log(prueba1);
@@ -41,6 +40,8 @@ function llamarValidator(palabrita){
 };
 
 function refrescar(){
+    contador = 0;
+    console.log(contador);
     let refrescame = 1;
     $.ajax ({
         url: 'include/captcha.php',
@@ -51,6 +52,33 @@ function refrescar(){
                 $('#contenedorMatriz').load('include/captcha.php');
             })
         }
+
+    })
+}
+
+function algo(){
+    console.log("alta caca amigo");
+    
+    console.log(document.getElementById("user").value);
+    console.log(document.getElementById("password").value);
+}
+function caca(){
+    useri = document.getElementById("useri").value;
+    password = document.getElementById("password").value;
+    console.log("alta caca amigo");
+    $.ajax ({
+        url: 'php/validar.php',
+        type: 'GET',
+        data: {useri},
+        success: function(response){
+            $(document).ready(function(){
+                console.log("me escucha");
+                $('caca1').load('/login.php');
+            })
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) { 
+            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+        }    
 
     })
 }

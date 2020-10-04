@@ -29,13 +29,11 @@
             </section>
         </form>
         
+        <div class="leerCaptcha">
+            <?php require_once  'include/captcha.php'; ?>
+        </div>
         <!--LLAMADA AL CAPTCHA-->
-        <?php require_once  'include/captcha.php'; ?>
-
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="get">
-        </form>
-        
-       
+        <?php// require_once  'include/captcha.php'; ?>
         <!--LLAMADA A FOOTER-->
         <?php require_once 'include/footer.php';?>  
         
