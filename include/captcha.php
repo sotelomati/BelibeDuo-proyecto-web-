@@ -1,6 +1,6 @@
 
 <?php 
- 
+session_start();
  
 
 
@@ -106,7 +106,7 @@ class captchaMaker{
                 echo "<br>";
             }
     }
-
+    
     public function imprimirMatriz(){
         $aux = 1;
             ?>
