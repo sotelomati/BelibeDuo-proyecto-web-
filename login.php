@@ -23,7 +23,7 @@
                         
                         $usuario = $_POST['usuario'];
                         $contraseña = $_POST['contraseña'];
-                        include("php/validar.php");
+                        include("php/procesoLogin.php");
                     }
                 ?>
             </section>

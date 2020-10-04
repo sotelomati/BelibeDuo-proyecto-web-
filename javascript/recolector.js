@@ -67,7 +67,7 @@ function caca(){
     password = document.getElementById("password").value;
     console.log("alta caca amigo");
     $.ajax ({
-        url: 'php/validar.php',
+        url: 'php/procesoLogin.php',
         type: 'GET',
         data: {useri},
         success: function(response){
