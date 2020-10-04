@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if(isset($_POST['ingresar'])){
         
             if(empty($usuario)){
@@ -9,10 +10,8 @@
             }
             if(($usuario == "fcytuader") && ($contraseña == "prg")){
                 echo "<font color='blue'>INGRESO CORRECTAMENTE</font>";
-                $host= $_SERVER["HTTP_HOST"];
-                $url= $_SERVER["REQUEST_URI"];
-                
-                echo "" . $url;
+                //CREO LA SESION sesionLogin con USUARIO
+                $_SESSION['sesionLogin'] = $usuario;
                 cambiarPagina("logueado.php");
             }
             else{

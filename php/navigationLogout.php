@@ -19,11 +19,13 @@
     </ul>
 
     <div class="contenedorNav">
+        
         <nav class="navegacion">
             
             <li>
                 <i class="fas fa-blog" style="font-size: 40px; float: left"></i>
             </li>
+            <!--CELULAR-->
             <ul class="menuLeft_borrar">
                 <a href="index.php">
                 <li>Home</li>
@@ -35,7 +37,14 @@
                 </a>
 
                 <!--<hr class="lineaNav">-->
-            </ul>   
+            </ul>
+            <!--FIN CELULAR-->   
+            
+            
+
+                <ul class= dch>
+                    <li style = "float: right"><a href="login.php"> Login </a></li>
+                </ul>
         </nav>   
     </div>
 </body>

@@ -53,14 +53,21 @@
 .navegacion a:hover{
     font-size: 23px;
 }
-.dch{
-
+.dch a{
+    font-size: 20px;
+    text-align: right;
+}
+.dch p{
+    font-size: 20px;
+    text-align: right;
 }
 
-.dch li{
+/*.dch li{
     right: 60px;
     position: absolute;
-}
+    display: inline-block;
+}*/
+
 .prueba{
     right: 30px;
     position: absolute;

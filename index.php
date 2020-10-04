@@ -5,7 +5,7 @@
     <title>puto el que lee</title>
 </head>
 <body class="body">
-    <?php require_once  'include/navigation.php'; ?>    
+    <?php include 'php/validarSesion.php';?> 
     <?php require_once 'include/footer.php';?> 
 </body>
 
