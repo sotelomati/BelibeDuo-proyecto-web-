@@ -110,7 +110,7 @@ class captchaMaker{
     public function imprimirMatriz(){
         $aux = 1;
             ?>
-                <div class="contenedorCaptcha" id="contenedorMatriz" >
+                <div class="contenedorCaptcha" id="contenedorMatriz2" >
                     
                     <div class="contenedorMatriz">
                     
@@ -157,7 +157,7 @@ class captchaMaker{
                             <i style="font-size: 40px; background-color: transparent; padding: 5px;" class="fas fa-sync" onclick="refrescar();"></i>
                         </button>
 
-                        <button class="buttonsTiny">
+                        <button id="cagadota" class="buttonsTiny" onclick="validame();">
                             Validar
                         </button>
                     </div> 
@@ -169,15 +169,14 @@ class captchaMaker{
                
             
     }
+
     public function refresh(){
         //$palabraToImage = $this->getPalabra();
         //require_once  'rimagen.php';
+        $_POST['original'] = $this->getPalabra();
         $this->llenarMatriz();
         $this->imprimirMatriz();
-
     }
-
-
 }
 
 class captchaValidator{
@@ -209,19 +208,15 @@ class captchaValidator{
     }
 
     private function comJsLongitud($long){
-        debug_to_console("ya mande las cosas");
         $probando =  [$long];
         $largo = json_encode($probando);
-        echo $largo;
-        return $largo;
-        //echo "caca";
-        
+        return $largo;  
     }
 
     private function validarCaptcha($final){
          if($final == $this->original){
             $_SESSION['resultado'] = 1;
-            debug_to_console('psitivo');
+            debug_to_console('positivo');
          }
          else{
             $_SESSION['resultado'] = 0;
@@ -266,13 +261,19 @@ function llamarval($pal){
 
     if(isset($POST['refrescame']) == 1)
     {
-        $captchaMaker->refresh();
+        //$captchaMaker->refresh();
     }
 
-    if(isset($POST['palabra']) != "" )
+    if(isset($POST['refrescame']) == 1)
     {
-        debug_to_console("la palabra es : ".$POST['palabra']);
-        $captchaValidator->validarCaptcha($POST['palabra']);
+        ?>
+        <div class="funciona" id="cagada">
+            <p>la palabra es <?php echo $POST['palabra'];?></p>
+        </div>
+        <?php
+        echo'caca';
+        debug_to_console("la palabra es : ".$_POST['palabra']);
+        $captchaValidator->validarCaptcha($_POST['palabra']);
         if($captchaValidator->getResultado()){
             $host= $_SERVER["HTTP_HOST"];
             $url= $_SERVER["REQUEST_URI"];

@@ -11,14 +11,13 @@ function recibir(x) {
       
         concatenar = document.getElementById(x).innerHTML;
         prueba1 = prueba1 + concatenar;
-        console.log(prueba1);
-
+        document.getElementById("cagadota2").value = prueba1;
         document.getElementById("letra"+contador).innerText = concatenar;
 
         contador++;
     }
     if(contador == largo){
-        llamarValidator(prueba1)
+        //llamarValidator();
     }
     
 }
@@ -27,58 +26,23 @@ function doNothing(){
     console.log("ya no hago nada");
 }
 
-function llamarValidator(palabrita){
-    let palabra = palabrita;
+function validame(){
+    let palabra = prueba1;
+    console.log("quien ha invocado al dios");
     $.ajax({
-        url: 'include/captcha.php',
-        type: 'POST',
-        data: {palabra},
+        url: 'include/pruebas.php',
+        type: 'GET',
+        data: {'palabra': palabra},
         success: function(response){
-            console.log('me escuchan');
         }
     })
 };
 
 function refrescar(){
-    contador = 0;
-    console.log(contador);
-    let refrescame = 1;
-    $.ajax ({
-        url: 'include/captcha.php',
-        type: 'POST',
-        data: {refrescame},
-        success: function(response){
-            $(document).ready(function(){
-                $('#contenedorMatriz').load('include/captcha.php');
-            })
-        }
-
+    $(document).ready(function(){
+        $('#recargar').load('include/imagenGenerator.php');
     })
 }
 
-function algo(){
-    console.log("alta caca amigo");
-    
-    console.log(document.getElementById("user").value);
-    console.log(document.getElementById("password").value);
-}
-function caca(){
-    useri = document.getElementById("useri").value;
-    password = document.getElementById("password").value;
-    console.log("alta caca amigo");
-    $.ajax ({
-        url: 'php/procesoLogin.php',
-        type: 'GET',
-        data: {useri},
-        success: function(response){
-            $(document).ready(function(){
-                console.log("me escucha");
-                $('caca1').load('/login.php');
-            })
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) { 
-            alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-        }    
 
-    })
-}
+
