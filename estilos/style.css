@@ -62,11 +62,11 @@
     text-align: right;
 }
 
-/*.dch li{
+.dch li{
+    float: right;
     right: 60px;
-    position: absolute;
     display: inline-block;
-}*/
+}
 
 .prueba{
     right: 30px;
@@ -149,7 +149,7 @@ h5{
     width: 90%;
     margin: auto;
     border: 1px solid #017bab;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 10px 10px;
     background: #f7f1e3;
     font-size: 14px;
@@ -157,6 +157,16 @@ h5{
 }
 
 .controlsMiddle{
+    width: 47%;
+    border: 1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 10px 10px;
+    background: #f7f1e3;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.controlsMiddle2{
     width: 47%;
     border: 1px solid #017bab;
     margin-bottom: 15px;
@@ -436,9 +446,7 @@ h5{
     margin-bottom: 10px;
 }
 
-.captcha input{
-    display: none;
-}
+
 
 /*
 ###############################################
@@ -518,7 +526,7 @@ p{
 
 /*
 ###############################################
-             ADAPTACION A 700PX
+             ADAPTACION A 900PX
 ###############################################
 */
 
@@ -591,6 +599,7 @@ p{
         width: 92%;
         height: 40px;
         margin-bottom: 8px;
+        margin-top: 10px;
     }
     
 
@@ -635,7 +644,38 @@ p{
         text-align: center;
         font-size: 15px;
     }
+    /*
+###############################################
+             CAPTCHA
+###############################################
+*/
+
+.captchaCont{
+    width: 100%;
+    height: auto;
 }
+
+.imagenr{
+    width: 100%;
+}
+
+.imagenr img{
+    margin-top: 4px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.controlsMiddle2{
+    width: auto;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    padding: 10px 10px;
+}
+}
+
+
+
 
     /* Smartphones (portrait & landscape) */
 @media (max-width : 450px){
@@ -713,7 +753,7 @@ p{
 
     .form-login{
         width:70%;
-        height: 20%;
+        height: 25%;
         margin-top: 80px;
     }
     
@@ -766,5 +806,33 @@ p{
     .pieContenedor a{
         font-size: 12px;
     }
+
+        /*
+###############################################
+             CAPTCHA
+###############################################
+*/
+
+.captchaCont{
+    width: 100%;
+    height: auto;
+}
+
+.imagenr{
+    width: 100%;
+}
+
+.imagenr img{
+    margin-top: 4px;
+    margin-left: 18px;
+    margin-bottom: 10px;
+}
+
+.controlsMiddle2{
+    width: 90%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 10px 10px;
+}
 }
 

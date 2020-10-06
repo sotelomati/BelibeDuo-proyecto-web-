@@ -6,7 +6,7 @@
     </head>
     <body>
         
-        <?php require_once  'include/navigation.php'; ?>
+        
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
             
             
@@ -20,7 +20,7 @@
                     require_once 'include/imagenGenerator.php';
                     ?>
                 
-                <input class="controlsMiddle" type="text" name="captcha" value="" required>
+                <input class="controlsMiddle2" type="text" name="captcha" value="" required>
                 </section>
                 
                 <input class="buttons" type="submit" id="btn_login" name="ingresar" value="Ingresar">

@@ -5,7 +5,7 @@
     <title>Principal</title>
 </head>
 <body class="body">
-    <?php include 'php/validarSesion.php';?> 
+    
     <?php require_once 'include/footer.php';?> 
 </body>
 

@@ -15,7 +15,7 @@
                 echo "<font color='blue'>INGRESO CORRECTAMENTE</font>";
                 //CREO LA SESION sesionLogin con USUARIO
                 $_SESSION['sesionLogin'] = $usuario;
-                cambiarPagina("logueado.php");
+                cambiarPagina("inicio.php");
                 }
             else{
                 echo "<p class='error'>* Usuario o Contraseña incorrecto </p>";

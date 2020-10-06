@@ -23,6 +23,6 @@
   
 </head>
 <body>
-
+  <?php include 'php/validarSesion.php';?> 
 </body>
 </html>

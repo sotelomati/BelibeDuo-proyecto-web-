@@ -40,11 +40,24 @@
             </ul>
             <!--FIN CELULAR-->   
             
-            
-
+            <?php
+            $accion = "";
+            $rutaAccion = "";
+            if(isset($_SESSION['sesionMostrar'])){
+                if($_SESSION['sesionMostrar'] != "No logueado"){
+                    $accion = "Logout";
+                    $rutaAccion= "php/cerrarSesion.php";
+                }
+                else{
+                    $accion = "Login";
+                    $rutaAccion= "login.php";
+                }
+                
+            }
+            ?>
                 <ul class= dch>
-                    <li style = "float: right">Usuario:<a> <?php echo $_SESSION['sesionLogin']; ?></a></li> <br>
-                    <li style = "float: right"><a href="php/cerrarSesion.php"> Logout </a></li>
+                    <li style = "float: right; font-size: 15px;">Usuario:<a style="font-size: 15px;"> <?php echo $_SESSION['sesionMostrar']; ?></a></li> <br>
+                    <li style = "float: right"><a href= <?php   echo $rutaAccion; ?>> <?php echo $accion; ?> </a></li>
                 </ul>
         </nav>   
     </div>
