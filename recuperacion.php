@@ -5,7 +5,7 @@
     <title>Recuperacion de Contraseña</title>
 </head>
 <body>
-    <?php require_once  'include/navigation.php'; ?>
+    
     
             
     <form action="<?php echo

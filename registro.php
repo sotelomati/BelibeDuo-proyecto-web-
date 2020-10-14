@@ -6,8 +6,7 @@
 </head>
 
 <body>
-    
-<?php require_once  'include/navigation.php'; ?>    
+      
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
             
             

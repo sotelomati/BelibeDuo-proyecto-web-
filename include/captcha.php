@@ -1,3 +1,4 @@
+
 <?php 
  session_start();
  
@@ -108,9 +109,8 @@ class captchaMaker{
 
     public function imprimirMatriz(){
         $aux = 1;
-                
-                //echo '<div class="contenedorCaptcha">';
-                ?>
+            ?>
+                <link rel="stylesheet" href="estilos/style.css">
                 <div class="contenedorCaptcha" id="contenedorMatriz" >
                     
                     <div class="contenedorMatriz">
@@ -136,31 +136,33 @@ class captchaMaker{
 
 
                 <script type="text/javascript">
-                var largo = "<?php echo strlen($this->getPalabra());?>";
+                largo = "<?php echo strlen($this->getPalabra());?>";
                 
                 </script>
                  
                 </div>
-                <div class="contenedorPalabra">
-                    <?php
-                        //  IMPRIME DONDE SE ESCRIBE LA PALABRA
-                        for($i = 0; $i < strlen($this->getPalabra()); $i++){
-                            ?>
-                            
-                            <div  class="letra" id="<?php echo "letra".$i; ?>" value="" onclick=""></div>
-                            <?php
-                            $aux++;
-                        }
-                    ?>
+                <div class="contenedorBotonesCaptcha">
+                    <div class="contenedorPalabra">
+                        <?php
+                            //  IMPRIME DONDE SE ESCRIBE LA PALABRA
+                            for($i = 0; $i < strlen($this->getPalabra()); $i++){
+                                ?>
+                                
+                                <div  class="letra" id="<?php echo "letra".$i; ?>" value="" onclick=""></div>
+                                <?php
+                                $aux++;
+                            }
+                        ?> 
+                    </div>
+                    <button>
+                        <i style="font-size: 40px; background-color: transparent; padding: 5px;" class="fas fa-sync" onclick="refrescar();"></i>
+                    </button>
 
-                </div>
-                <button>
-                    <i style="font-size: 40px; background-color: transparent;" class="fas fa-sync" onclick="refrescar();"></i>
-                </button>
-                
-               
-
-            </div>
+                    <button class="buttonsTiny">
+                        Validar
+                    </button>
+                </div> 
+            
             <?php
 
 
@@ -192,7 +194,6 @@ class captchaValidator{
         $this->limite= 0;
     }
     public function getResultado(){
-        
         return ($resultado == 1);
     }
     public function setPalabra($captcha){
@@ -227,15 +228,6 @@ class captchaValidator{
              debug_to_console("Fallaste crack");
          }
     }
-    /*public function setLetra($letra){
-        if( $this->contador < $this->limite){
-            $this->letras[$this->contador]=$letra;
-            $this->contador++;
-        }
-        else{
-            $this->validarCaptcha();
-        }
-    }*/
 }
 
 
@@ -269,22 +261,6 @@ debug_to_console($captchaMaker->getPalabra());
 function llamarval($pal){
     $captchaValidator->validarCaptcha($pal);
 }
-//no funciona aun
-/*
-if(isset($_GET['pos'])){
-        
-    $letraAux = $_GET['pos'];
-    debug_to_console($letraAux);
-    echo $cosa;
-    $captchaValidator->setLetra($letraAux);
-} 
-    if(isset($_GET['pos'])){
-        
-        $letraAux = $_GET['pos'];
-        $captchaValidator->setLetra($letraAux);
-        $contador++;
-    }*/
-    
 
 
 
@@ -297,9 +273,19 @@ if(isset($_GET['pos'])){
     {
         debug_to_console("la palabra es : ".$POST['palabra']);
         $captchaValidator->validarCaptcha($POST['palabra']);
+        if($captchaValidator->getResultado()){
+            $host= $_SERVER["HTTP_HOST"];
+            $url= $_SERVER["REQUEST_URI"];
+            cambiarPagina("logueado.php");
+        }
     }
 
+    
 
+
+    function cambiarPagina($ruta){
+        header("location: http://localhost/loginPA/".$ruta);
+    }
 
 
 
