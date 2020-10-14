@@ -11,7 +11,7 @@
                 echo "<p class='error'>* Agrega tu contraseña </p>";
             }
 
-            if(($usuario == "fcytuader") && ($contraseña == "prg")){
+            if(($usuario == "fcytuader") && ($contraseña == "programacionavanzada")){
                 echo "<font color='blue'>INGRESO CORRECTAMENTE</font>";
                 //CREO LA SESION sesionLogin con USUARIO
                 $_SESSION['sesionLogin'] = $usuario;
