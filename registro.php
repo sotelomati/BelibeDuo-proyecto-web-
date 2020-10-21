@@ -47,10 +47,15 @@
 
                 <?php
                     if(isset($_POST['botonReg'])){
-                        $usuario = $_POST['usuario'];
-                        $contraseñaReg = $_POST['contraseñaReg'];
-                        $contraseñaReg2 = $_POST['contraseñaReg2'];
-                        include("php/validarRegistro.php");
+                        $usuarioNuevo = $_POST['usuario'];
+                        $correo = $_POST['correo'];
+                        $codArea = $_POST['codArea'];
+                        $provincia = $_POST['provincia'];
+                        $numeroReg = $_POST['telefono'];
+                        $contraseñaReg = hash('sha256', $_POST['contraseñaReg']);
+                        $contraseñaReg2 = hash('sha256', $_POST['contraseñaReg2']);
+                      
+                        include("php/procesoLogin.php");
                     }
                     
                 ?>

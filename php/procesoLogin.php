@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    
 
     if(isset($_POST['ingresar'])){
         if($_SESSION['palabra2'] == md5($captcha)){
@@ -26,6 +26,36 @@
         }
     }
 
+    if(isset($_POST['botonReg'])){
+        if(!empty($usuarioNuevo)){
+            if(!empty($contraseñaReg) && !empty($contraseñaReg2)){
+                if($contraseñaReg == $contraseñaReg2){
+                    $con = new mysqli('127.0.0.1','modifica','modificandoPA', 'trabajopractico1');
+
+                    if($con ->connect_errno){
+                        echo "<p class='error'>* falla coneccion base de datos</p>";    
+                    }else{
+                        /*$buscaIdUbicacion = "SELECT id_ubicacion FROM ubicaciones WHERE nombre like ".$provincia;
+                        $id_ubicacion = $con->query($buscaIdUbicacion);*/
+                       
+                        $agregar = "INSERT INTO usuarios(correo, nombre, contraseña, id_ubicacion) VALUES ('$correo', '$usuarioNuevo', '$contraseñaReg', '7')";
+                        $con->query($con, $agregar);
+    
+                        $agregaTelefono = "INSERT INTO telefonos(numero, cod_area, id_usuario)VALUES('$correo', '$codArea', '$numeroReg')";
+    
+                        $con->query($con, $agregaTelefono);
+
+                        $con->close();
+                    }
+                }
+            }else{
+                echo "<p class='error'>* las contraseñas no coinciden</p>";    
+            }
+        }else{
+            echo "<p class='error'>* usuario no valido</p>";
+        }
+
+    }
 
     function cambiarPagina($ruta){
         header("location: http://localhost/loginPA/".$ruta);
