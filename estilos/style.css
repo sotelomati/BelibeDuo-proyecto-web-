@@ -456,7 +456,52 @@ h5{
 }
 
 
+/*
+###############################################
+             juegos
+###############################################
+*/
+.galeria{
+    width: 100%;
+    margin: auto;
+    padding: auto;
+    
+}
+.contenedorJuegos{
+    position: absolute;
+    margin-top: 5%;
+    margin-right: 12.5%;
+    margin-left: 12.5%;
+    text-align: center;
+    background-color: #2f3542;
+    opacity: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    
+    
+    
+}
 
+.juego{
+    
+    margin-top: 15px;
+    margin: 5px;
+    border: 2px solid grey;
+}
+
+.juego h1{
+    
+    color: white;
+}
+
+.juego p{
+    justify-content: center;
+}
+
+.juego input{
+    margin: 5px;
+}
 /*
 ###############################################
                 RECUPERACION
