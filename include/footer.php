@@ -33,7 +33,7 @@
         <div class="pieFinal">
             <i class="far fa-registered">Copyright Todos los derechos reservados</i>
         </div>
-    </footer>
+</footer>
   
     
 

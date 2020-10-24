@@ -17,6 +17,11 @@
                 echo "<font color='blue'>INGRESO CORRECTAMENTE</font>";
                 //CREO LA SESION sesionLogin con USUARIO
                 $_SESSION['sesionLogin'] = $usuario;
+                //prueba de mail
+                $to = "sotelomati@gmail.com";
+                $asunto = "Prueba de mail con php";
+                $mensaje = "Esto es una prueba de mail con php";
+                mail("schmidt.octavio@gmail.com,schmidt.octavio@gmail.com","asuntillo","Este es el cuerpo del mensaje");
                 cambiarPagina("inicio.php");
                 }
             else{
