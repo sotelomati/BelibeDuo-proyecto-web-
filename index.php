@@ -13,6 +13,29 @@
                         foreach($juegos as $juego){
                             echo '<div class="juegos"> <h1>'.$juego[0]'</h1></div>'
                         }*/
+                        /*/////////////////////////////////////////////////////////////////////////////////
+                         include 'modelos/clasejuego.php';
+                        if($resultado){
+                            while($row = $resultado->fetch_array()){
+                                $nombre = $row['nombre'];
+                                $descripcion1 = $row['descripcion'];
+                                $descripcion2 = $row['tipo'];
+                                $oJuego = new Juego($nombre, $descripcion2, $descripcion1);
+                                /*$oJuego->setNombre($nombre);
+                                $oJuego->setCategoria($descripcion2);
+                                $oJuego->setDescripcion($descripcion1);*/
+                                $vectorJuegos[$i]=$oJuego;
+                                $i++;
+                                ?>
+                                <div class="juego">
+                                    <h1><?php echo $nombre; ?></h1>
+                                    <p><?php echo $descripcion1 ?></p>
+                                    <p><?php echo $descripcion2 ?></p>
+                                    <input class="buttons" type="submit" id="juego1" name="detalles" value="Detalles">
+                                </div>
+                                <?php
+                            }
+                        *//////////////////////////////////////////////////////////////////////////////////
                         $con = new mysqli('127.0.0.1','lectura','leyendoPA', 'trabajopractico1');
 
                         if($con ->connect_errno){
