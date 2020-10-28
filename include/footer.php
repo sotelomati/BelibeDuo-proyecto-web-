@@ -14,7 +14,8 @@
                 <p>Somos dos integrantes que solo buscamos que 
                         puedas encontrar gente con la cual jugar y divertirte!</p>
                 <p>Si tenes algun problema con un usuario comunicate con nosotros,
-                        decinos el motivo y nos haremos cargo.<img src="estilos/images/ban.png"></p>
+                        decinos el motivo y nos haremos cargo.</p>
+                <img src="estilos/images/ban2.png">        
                 
 
             </div>

@@ -285,6 +285,7 @@ footer{
 
 .colum1{
     max-width: 400px;
+    text-align: center;
 }
 
 .colum1 h1{
@@ -298,8 +299,8 @@ footer{
     margin-top: 20px;
 }
 .colum1 img{
-    width: 36px;
-    height: 36px;
+    width: 200px;
+    height: 100px;
 }
 
 .colum2{
