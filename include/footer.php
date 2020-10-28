@@ -3,36 +3,81 @@
 <head>
 </head>
 
-<footer class="pieGeneral">
-        <div class="pieContenedor">
-            <ul>
-                <li><i class="fab fa-github"></i></li>
-                <li><p><a href="https://github.com/sotelomati">Sotelomati</a></p></li>
-                <li><p><a href="https://github.com/GonzalezAg">GonzalezAg</a></p></li>
-                <li><p><a href="https://github.com/schmidtoctavio">SchmidtOctavio</a></p></li>
-            </ul>
+<footer>
+<div class="container-footer-all">
+        
+        <div class="container-body">
 
-            <ul>
-                <li><i class="fab fa-linkedin"></i></li>
-                <li><p><a href="https://www.linkedin.com/in/matias-sotelo-6a3b901ab/">Sotelo Matias</a></p></li>
-                <li><p><a href="#">Gonzalez Agustin</a></p></li>
-                <li><p><a href="#">Schmidt Octavio</a></p></li>
-            </ul>
+            <div class="colum1">
+                <h1>Más información de la compañia</h1>
+
+                <p>Somos dos integrantes que solo buscamos que 
+                        puedas encontrar gente con la cual jugar y divertirte!</p>
+                <p>Si tenes algun problema con un usuario comunicate con nosotros,
+                        decinos el motivo y nos haremos cargo.<img src="estilos/images/ban.png"></p>
                 
-            <ul>
-                <li><img  src="estilos/images/uader.png" alt="imagen de uader"></li>
-                <li><p>
-                        <a class="facultad" href="http://fcyt.uader.edu.ar/web/">FCyT UADER     <i class="fas fa-chevron-right"></i>
-                        <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </p>
-                </li>
-            </ul>                           
+
+            </div>
+
+            <div class="colum2">
+
+                <h1>Jugá con nosotros!</h1>
+
+                <div class="row">
+                    <img src="estilos/images/steam.png">
+                    <label>Sport-up</label>
+                </div>
+                <div class="row">
+                    <img src="estilos/images/steam.png">   
+                    <label>steam de mati</label>
+                </div>
+                <div class="row">
+                    <img src="estilos/images/lol.png">
+                    <label>Edinier</label>
+                </div>
+                <div class="row">
+                    <img src="estilos/images/lol.png">
+                    <label>lol de mati</label>
+                </div>
+
+
+            </div>
+
+            <div class="colum3">
+
+                <h1>Informacion Contactos</h1>
+
+                <div class="row2">
+                    <img src="estilos/images/house.png">
+                    <label>Entre Rios, 
+                    Paraná
+                </label>
+                </div>
+
+                <div class="row2">
+                    <img src="estilos/images/contact.png">
+                     <label>maildelapagina@gmail.com</label>
+                </div>
+
+            </div>
+
         </div>
-        <hr style="border: 1px solid #dfe4ea">
-        <div class="pieFinal">
-            <i class="far fa-registered">Copyright Todos los derechos reservados</i>
+    
+    </div>
+    
+    <div class="container-footer">
+           <div class="footer">
+                <div class="copyright">
+                    © 2020 Todos los Derechos Reservados | <a href="">NOMBREPAG</a>
+                </div>
+
+                <div class="information">
+                    <a href="">Informacion Compañia</a> | <a href="">Privacion y Politica</a> | <a href="">Terminos y Condiciones</a>
+                </div>
+            </div>
+
         </div>
+    
 </footer>
   
     

@@ -77,8 +77,9 @@ class Juego{
     }
 
     public function mostrar(){
+        $urlimagen= "estilos/images/imagenjuegos/".$this->acronimo.".jpg";
         echo '
-        <div class="juego">
+        <div class="juego" style= "background-image: url('.$urlimagen.')">
             <h1>'.$this->nombre.'</h1>
             <p>'.$this->descripcion.'</p>
             <p>'.$this->muestraCategorias().'</p>
