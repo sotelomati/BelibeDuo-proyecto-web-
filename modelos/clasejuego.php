@@ -51,6 +51,21 @@ class Amadeuz{
             $this->estanteria[$i]->mostrar();
         }
     }
+
+    public function mostrarGaleriaPersonal(){
+        for($i = 0; $i < $this->cantidad; $i++){
+            $this->estanteria[$i]->mostrarPersonal();
+        }
+    }
+
+    public function buscarJuego($idJuego){
+        for($i = 0; $i < count($this->estanteria); $i++){
+            if($this->estanteria[$i]->getAcronimo() == $idJuego){
+                return $this->estanteria[$i];
+            }
+        }
+        return NULL;
+    }
 }
 
 class Juego{
@@ -67,6 +82,10 @@ class Juego{
         
         debug_to_console($this->acronimo);
         $this->setCategoria();
+    }
+
+    public function getAcronimo(){
+        return $this->acronimo;
     }
 
     public function setCategoria()
@@ -108,6 +127,24 @@ class Juego{
 
             echo'</div>
             <input class="buttons" type="submit" id="'.$this->acronimo.'" name="'.$this->acronimo.'" value="Detalles">
+        </form>
+        ';
+    }
+
+    public function mostrarPersonal(){
+        $urlimagen= "estilos/images/imagenjuegos/".$this->acronimo.".jpg";
+        echo '
+        <form class="framePersonal" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="POST" >
+            <div style=" space-between: justify: margin:auto;display: flex; text-align: center;";>
+                <div style=" margin:auto;">
+                    <h1>'.$this->nombre.'</h1>
+                    <input name="juegoToDelete" method="POST" type="hidden" value="'.$this->acronimo.'">
+                    ';$this->muestraCategorias();
+                echo'</div>
+                    <div style=" margin:auto;">
+                    <input action="objetos\procesos\deleteJuego.php" style=" right: 10px; width: 30px;"; class="butonDelete" method="POST" src="estilos/images/extras/delete.png" type="image" name="deleteJuego">
+                    </div>
+            </div>
         </form>
         ';
     }

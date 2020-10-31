@@ -99,8 +99,49 @@ ul{
     display: none;
 }
 
+/*
+###################################
+                 USUARIOS
+##################################
+*/
 
+.contenedorPrincipal{
+    margin: auto;
+    width: 80%;
+    
+    background-color: tomato;
+    opacity: 0.7;
+    border: 5px solid white;
+}
 
+.contenedorInfoUser{
+    display: inline-flex;
+}
+
+.informacionPersonal{
+    margin: 10px;
+    display: inline-block;
+    padding: 15px;
+    border: 2px solid black;
+
+    
+}
+
+.informacionPersonal p{
+    text-align: left;    
+}
+
+.informacionPersonal img{
+    margin-left: 50px;
+    width: 50px;
+}
+
+.listaJuegos{
+    margin: 10px;
+    width: 60%;
+    border: 2px solid black;
+    display: block;
+}
 /*
 ###################################
                  BODY
@@ -202,6 +243,21 @@ h5{
 
 .buttons{
     width: 92%;
+    height: 40px;
+    background: #e37222;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    border-radius: 10px;
+}
+.buttons:hover{
+    background: #373737;
+    cursor: pointer;
+}
+
+.buttonsMiddle{
+    text-align: center;
+    width: 30%;
     height: 40px;
     background: #e37222;
     border: none;
