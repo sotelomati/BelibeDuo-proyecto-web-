@@ -9,8 +9,9 @@
         <div class="contenedorJuegos">
                     <?php
                         include 'modelos/clasejuego.php';
-                        $miEstante = new Amadeuz();
+                        $miEstante = new Amadeuz("");
                         $miEstante->mostrarGaleria();
+                        $_SERVER['juegos'] = $miEstante;
                     ?>
             </div>
         </div>

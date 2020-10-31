@@ -4,28 +4,47 @@ class Amadeuz{
     private $cantidad;
 
 
-    public function __construct(){
+    public function __construct($idUser){
         $this->cantidad = 0;
         $con = new mysqli('127.0.0.1','lectura','leyendoPA', 'trabajopractico1');
-
-        if($con ->connect_errno){
-            echo "<p class='error'>* falla coneccion base de datos</p>";    
-        }else{
-
-            $leeJuegos = "SELECT `Id_juego`, `nombre`, `descripcion` FROM `juegos`";
-            $resultado = mysqli_query($con, $leeJuegos);
-            $i=0;
-        if($resultado){
-            while($row = $resultado->fetch_array()){
-                $oJuego = new Juego($row['Id_juego'], $row['nombre'], $row['descripcion']);
-                $this->estanteria[$i]=$oJuego;
-                $i++;
-                $this->cantidad++;
+        if(empty($idUser)){
+            if($con ->connect_errno){
+                echo "<p class='error'>* falla coneccion base de datos</p>";    
+            }else{
+    
+                $leeJuegos = "SELECT `Id_juego`, `nombre`, `descripcion` FROM `juegos`";
+                $resultado = mysqli_query($con, $leeJuegos);
+                $i=0;
+            if($resultado){
+                while($row = $resultado->fetch_array()){
+                    $oJuego = new Juego($row['Id_juego'], $row['nombre'], $row['descripcion']);
+                    $this->estanteria[$i]=$oJuego;
+                    $i++;
+                    $this->cantidad++;
+                    }
                 }
+                $con->close();
             }
-            $con->close();
+        }else{
+            if($con ->connect_errno){
+                echo "<p class='error'>* falla coneccion base de datos</p>";    
+            }else{
+                $leeJuegos = "SELECT juegos.Id_juego, nombre, descripcion FROM usuario_juego INNER JOIN juegos ON usuario_juego.id_juego = juegos.Id_juego WHERE usuario_juego.id_usuario LIKE '$idUser'";
+                $resultado = mysqli_query($con, $leeJuegos);
+                $i=0;
+            if($resultado){
+                while($row = $resultado->fetch_array()){
+                    $oJuego = new Juego($row['Id_juego'], $row['nombre'], $row['descripcion']);
+                    $this->estanteria[$i]=$oJuego;
+                    $i++;
+                    $this->cantidad++;
+                    }
+                }
+                $con->close();
+            }
         }
-    }
+        
+    }   
 
     public function mostrarGaleria(){
         for($i = 0; $i < $this->cantidad; $i++){
@@ -60,16 +79,18 @@ class Juego{
             $traeCategorias = "SELECT categoria.descripcion FROM juegos_categoria
             INNER JOIN categoria
             ON juegos_categoria.id_categoria = categoria.id_categoria
-            WHERE id_juego LIKE 'CSGO'";
+            WHERE id_juego LIKE '$this->acronimo'";
             $categorias =  mysqli_query($con, $traeCategorias);
 
             $vector;
             $i = 0;
             while($fila = $categorias->fetch_array()){
                 $vector[$i] = $fila['descripcion'];
-                
+                $i++;
+                $vector[$i] = ' | ';
                 $i++;
             }
+            $vector[$i-1] = ' '; //saco la barra | que esta de mas
             $this->categoria = $vector;
             $con->close();
 
@@ -79,23 +100,22 @@ class Juego{
     public function mostrar(){
         $urlimagen= "estilos/images/imagenjuegos/".$this->acronimo.".jpg";
         echo '
-        <div class="juego" style= "background-image: url('.$urlimagen.')">
-            <h1>'.$this->nombre.'</h1>
-            <p>'.$this->descripcion.'</p>
-            <p>'.$this->muestraCategorias().'</p>
-            <input class="buttons" type="submit" id="juego1" name="detalles" value="Detalles">
-        </div>
+        <form class="frame" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post" >
+            <div class="juego" style= "background-image: url('.$urlimagen.')">
+                <h1>'.$this->nombre.'</h1>
+                <p>'.$this->descripcion.'</p>';
+                $this->muestraCategorias();
+
+            echo'</div>
+            <input class="buttons" type="submit" id="'.$this->acronimo.'" name="'.$this->acronimo.'" value="Detalles">
+        </form>
         ';
     }
 
     private function muestraCategorias(){
-        $resultado = "";
         for($i = 0; $i < count($this->categoria); $i++){
-            $resultado .= $this->categoria[$i];
-            $resultado .= "
-            ";
+             echo'<a  onclick=mostrarCategoria("'.$this->categoria[$i].'");">'.$this->categoria[$i].'</a>';
         }
-        return $resultado;
     }
 
 }

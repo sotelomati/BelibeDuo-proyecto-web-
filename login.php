@@ -36,7 +36,6 @@
                         $contraseña = $_POST['contraseña'];
                         
                         include("php/procesoLogin.php");
-                    
                 }
                 ?>
             </section>

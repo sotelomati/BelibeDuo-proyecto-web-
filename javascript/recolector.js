@@ -44,5 +44,16 @@ function refrescar(){
     })
 }
 
+function mostrarCategoria(){
+    
+    console.log("quien ha invocado al dios ");
+    /*$.ajax({
+        url: 'include/pruebas.php',
+        type: 'GET',
+        data: {'palabra': palabra},
+        success: function(response){
+        }
+    });*/
+}
 
 
