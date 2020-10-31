@@ -24,14 +24,13 @@ public function __construct($nombreUser){
         $this->nombre = $nombreUser;
         $this->correo = $row[0];
         $this->ubicacion = $row['nombre'];
-        
-        $this->setJuegos();
+        $_SESSION['correoLogin'] = $row[0];
 }
 }
 
 public function setJuegos(){
-    include 'modelos/clasejuego.php';
-    $this->misJuegos = new amadeuz($this->correo);
+    include 'juegos.php';
+    $this->misJuegos = new gestorJuegos($this->correo);
 }
 
 public function getJuegos(){

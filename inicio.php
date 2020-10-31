@@ -14,7 +14,10 @@
                         
             ?>
                 <div class="informacionPersonal">
-                <?php $usuarios->mostrarInfor();?>
+                    <?php   
+                        $usuarios->mostrarInfor();
+                        $usuarios->setJuegos();
+                    ?>
                 </div>
 
                 <div class="listaJuegos">

@@ -1,16 +1,32 @@
 <?php
-if(isset($_POST['deleteJuego'])){
-    debug_to_console('mama ya llegu')
-    $usuarios->deleteJuego($_POST['juegoToDelete']);
-}
+
+session_start();
+echo $_POST['juegoToDelete'];
+echo $_SESSION['correoLogin'];
+if(isset($_POST['juegoToDelete'])){
+    $elimino =$_POST['juegoToDelete'];
+    $identificador= $_SESSION['correoLogin'];
+
+    $con = new mysqli('127.0.0.1','elimina','eliminandoPA', 'trabajopractico1');
+        if($con ->connect_errno){
+            echo "<p class='error'>* falla coneccion base de datos</p>";    
+        }else{
+            $eliminaJuego = "DELETE FROM `usuario_juego` WHERE 'usuario_juego.id_juego' LIKE '$elimino' AND 'usuario_juego.id_usuario' LIKE '$identificador'";
+            echo $eliminaJuego;
+            $resultado = mysqli_query($con, $eliminaJuego);
+            if($resultado){
+                echo 'eliminado con esxito';
+            }
+        
+        }
+
+        
+    }
+        //echo'<script>alert("El juego no se encutra en la lista");</script>';
+    $_SESSION['actualizar'] = true;
+    header("location: ../../inicio.php");
 
 
-function debug_to_console($data) {
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
 
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
 
 ?>
