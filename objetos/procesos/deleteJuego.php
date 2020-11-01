@@ -11,22 +11,22 @@ if(isset($_POST['juegoToDelete'])){
         if($con ->connect_errno){
             echo "<p class='error'>* falla coneccion base de datos</p>";    
         }else{
-            $eliminaJuego = "DELETE FROM `usuario_juego` WHERE 'usuario_juego.id_juego' LIKE '$elimino' AND 'usuario_juego.id_usuario' LIKE '$identificador'";
+            $eliminaJuego = "DELETE FROM usuario_juego WHERE usuario_juego.id_juego = '$elimino' AND usuario_juego.id_usuario = '$identificador'";
             echo $eliminaJuego;
             $resultado = mysqli_query($con, $eliminaJuego);
             if($resultado){
                 echo 'eliminado con esxito';
             }
-        
+            $con->close();
         }
 
-        
-    }
+       
+}
         //echo'<script>alert("El juego no se encutra en la lista");</script>';
     $_SESSION['actualizar'] = true;
     header("location: ../../inicio.php");
 
-
+    
 
 
 ?>

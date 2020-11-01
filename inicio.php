@@ -22,7 +22,7 @@
 
                 <div class="listaJuegos">
                 <?php $usuarios->getJuegos();?>
-                
+
                 </div>
 
                 <div class="listaAmigos">
@@ -30,7 +30,9 @@
                 </div>
 
             </div>
-            <div class="buttonsMiddle">Agregar Juegos</div>
+            <div class="buttonsMiddle">
+            <a href="index.php" style="text-decoration:none" class="buttonsMiddle"><?php echo 'Agregar juego'?></a>
+            </div>
         </div>
         
     <?php require_once 'include/footer.php';?> 

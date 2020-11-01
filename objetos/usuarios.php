@@ -25,6 +25,7 @@ public function __construct($nombreUser){
         $this->correo = $row[0];
         $this->ubicacion = $row['nombre'];
         $_SESSION['correoLogin'] = $row[0];
+        $con->close();
 }
 }
 
@@ -82,11 +83,12 @@ public function deleteJuego($juegoToEliminar){
             $eliminaJuego = "DELETE FROM `usuario_juego` WHERE usuario_juego.id_juego LIKE '$eliminar' AND usuario_juego.id_usuario LIKE '$this->correo'";
             $resultado = mysqli_query($con, $eliminaJuego);
         }
-
+        $con->close();
         echo' <script>alert("juego eliminado con exito");</script>';
     }else{
         echo'<script>alert("El juego no se encutra en la lista");</script>';
     }
+    
 }
 }
 

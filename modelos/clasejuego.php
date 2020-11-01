@@ -155,6 +155,13 @@ class Juego{
         }
     }
 
+    /*private function botonDetalles(){
+        if(isset($_POST['CSGO'])){
+           
+            cout<<"asdasdasdasdasdasda"<<endl;
+        }
+    }*/
+
 }
 
 function debug_to_console($data) {
@@ -164,6 +171,7 @@ function debug_to_console($data) {
 
     echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 }
+
 
 
 ?>
