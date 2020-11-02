@@ -71,9 +71,9 @@ public function mostrarInfor(){
     echo'
     <div class="user">
         <img src="estilos\images\avatar\avatarMale.png">
-        <p> Nombre:'.$this->nombre.'</p>
-        <p> Correo:'.$this->correo.'</p>
-        <p> Ubicacion:'.$this->ubicacion.'</p>
+        <p style="color: white;"> Nombre:'.$this->nombre.'</p>
+        <p style="color: white;"> Correo:'.$this->correo.'</p>
+        <p style="color: white;"> Ubicacion:'.$this->ubicacion.'</p>
     </div>
     ';
 }

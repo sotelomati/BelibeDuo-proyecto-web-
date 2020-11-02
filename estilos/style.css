@@ -4,10 +4,7 @@
     
 }
 
-html{
-    min-height: 100%; 
-    position: relative;
-}
+
 
 /*
 ###################################
@@ -107,23 +104,29 @@ ul{
 
 .contenedorPrincipal{
     margin: auto;
-    width: 80%;
-    
-    background-color: tomato;
+    display: block;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 30px;
+    background-color: black;
     opacity: 0.7;
-    border: 5px solid white;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 .contenedorInfoUser{
     display: inline-flex;
+    
 }
 
 .informacionPersonal{
     margin: 10px;
-    display: inline-block;
-    padding: 15px;
-    border: 2px solid black;
+    display: block;
+    padding: 10px;
 
+    border: 2px solid rgba(255, 166, 0, 0.685);
+}
+.user{
     
 }
 
@@ -138,9 +141,25 @@ ul{
 
 .listaJuegos{
     margin: 10px;
-    width: 60%;
-    border: 2px solid black;
+
+    border: 2px solid rgba(255, 166, 0, 0.685);
+    padding: 5px 5px 5px 5px;
     display: block;
+}
+.botonesPersonal{
+    justify-content: space-between;
+}
+.personalAction{
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    background: #e37222;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    margin-left: 20px;
+    border-radius: 10px;
 }
 /*
 ###################################
@@ -258,7 +277,7 @@ h5{
 .buttonsMiddle{
     text-align: center;
     width: 30%;
-    height: 40px;
+    height: 30px;
     background: #e37222;
     border: none;
     color: white;
@@ -268,11 +287,6 @@ h5{
 .buttons:hover{
     background: #373737;
     cursor: pointer;
-}
-
-.botonesPersonal{
-    display: inline-flex;
-    justify-content: space-between;
 }
 
 
@@ -334,7 +348,6 @@ footer{
 }
 
 .container-footer-all{
-    width: 100%;
     max-width: 1200px;
     margin: auto;
     padding: 40px;
@@ -711,6 +724,7 @@ footer{
     margin: 5px;
     bottom:0;
 }
+
 
 
 /*

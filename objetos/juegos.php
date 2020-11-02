@@ -140,13 +140,13 @@ class Juego{
         $urlimagen= "estilos/images/imagenjuegos/".$this->acronimo.".jpg";
         echo '
         <form class="framePersonal" action="objetos/procesos/deleteJuego.php" method="POST" >
-            <div style=" space-between: justify: margin:auto;display: flex; text-align: center;";>
+            <div style=" space-between: justify; margin:auto;display: flex; text-align: center;";>
                 <div style=" margin:auto;">
-                    <h1>'.$this->nombre.'</h1>
+                    <h1 style="font-size: 16px; color: orange;">'.$this->nombre.'</h1>
                     <input name="juegoToDelete" type="hidden" value="'.$this->acronimo.'">
                     ';$this->muestraCategorias();
                 echo'</div>
-                    <div style=" margin:auto;">
+                    <div style="align: right;">
                     <input action="objetos\procesos\deleteJuego.php" style=" right: 10px; width: 30px;"; class="butonDelete" method="POST" src="estilos/images/extras/delete.png" type="image" name="deleteJuego">
                     </div>
             </div>
@@ -156,7 +156,7 @@ class Juego{
 
     private function muestraCategorias(){
         for($i = 0; $i < count($this->categoria); $i++){
-             echo'<a  onclick=mostrarCategoria("'.$this->categoria[$i].'");">'.$this->categoria[$i].'</a>';
+             echo'<a style= "color: white; font-size: 10px;" onclick=mostrarCategoria("'.$this->categoria[$i].'");">'.$this->categoria[$i].'</a>';
         }
     }
 

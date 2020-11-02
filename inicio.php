@@ -8,11 +8,11 @@
     
         <div class="contenedorPrincipal">
             <div class="contenedorInfoUser">
-            <?php
-                include 'objetos/usuarios.php';
-                $usuarios = new usuario($_SESSION['sesionLogin']);
-                        
-            ?>
+                <?php
+                    include 'objetos/usuarios.php';
+                    $usuarios = new usuario($_SESSION['sesionLogin']);
+                            
+                ?>
                 <div class="informacionPersonal">
                     <?php   
                         $usuarios->mostrarInfor();
@@ -25,23 +25,27 @@
 
                 </div>
 
-                <div class="listaAmigos">
+                <div class="informacionPersonal">
                     <?php   
-                        $usuarios->traerAmigos();
-                        $usuarios->mostrarAmigos();
+                        /*$usuarios->traerAmigos();
+                        $usuarios->mostrarAmigos();*/
+                        $usuarios->mostrarInfor();
+                        $usuarios->mostrarInfor();
+                        $usuarios->mostrarInfor();
+                        $usuarios->mostrarInfor();
                     ?>
                 </div>
 
             </div>
 
             <div class="botonesPersonal">
-                <div class="buttonsMiddle">
-                <a href="index.php" style="text-decoration:none" class="buttonsMiddle"><?php echo 'Agregar juegos'?></a>
-                </div>
+                
+                <a href="index.php" style="text-decoration:none" class="personalAction"><?php echo 'Agregar juegos'?></a>
+                
 
-                <div class="buttonsMiddle">
-                <a style="margin-left= 300px;"href="social.php" style="text-decoration:none" class="buttonsMiddle"><?php echo 'Buscar Amigos'?></a>
-                </div>
+                
+                <a href="social.php" style="text-decoration:none; margin-left= 300px;" class="personalAction"><?php echo 'Buscar Amigos'?></a>
+                
             </div>
             
 
