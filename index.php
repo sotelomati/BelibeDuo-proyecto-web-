@@ -8,9 +8,9 @@
     <div class="galeria">
         <div class="contenedorJuegos">
                     <?php
-                        include 'modelos/clasejuego.php';
+                        include 'objetos/juegos.php';
                         
-                        $miEstante = new Amadeuz("");
+                        $miEstante = new gestorJuegos("");
                         $miEstante->mostrarGaleria();
                         $_SERVER['juegos'] = $miEstante;
 

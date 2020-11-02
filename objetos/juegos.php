@@ -123,14 +123,15 @@ class Juego{
     public function mostrar(){
         $urlimagen= "estilos/images/imagenjuegos/".$this->acronimo.".jpg";
         echo '
-        <form class="frame" action="'.htmlspecialchars($_SERVER['PHP_SELF']).'" method="post" >
+        <form class="frame" action="objetos/procesos/agregarJuego.php" method="POST" >
             <div class="juego" style= "background-image: url('.$urlimagen.')">
                 <h1>'.$this->nombre.'</h1>
-                <p>'.$this->descripcion.'</p>';
+                <p>'.$this->descripcion.'</p>
+                <input name="juegoToAdd" type="hidden" value="'.$this->acronimo.'">';
                 $this->muestraCategorias();
-
+                
             echo'</div>
-            <input class="buttons" type="submit" id="'.$this->acronimo.'" name="'.$this->acronimo.'" value="Detalles">
+            <input class="buttons" type="submit" id="'.$this->acronimo.'" name="addGame" value="Soy jugador">
         </form>
         ';
     }

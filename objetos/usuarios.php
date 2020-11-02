@@ -5,6 +5,7 @@ class Usuario{
     private $ubicacion;
     private $misJuegos;
     private $amigos; 
+    private $cantidadAmigos;
 
 
 public function __construct($nombreUser){
@@ -39,27 +40,31 @@ public function getJuegos(){
 }
 
 public function traerAmigos(){
-    $this->cantidad = 0;
+    $this->cantidadAmigos = 0;
     $con = new mysqli('127.0.0.1','lectura','leyendoPA', 'trabajopractico1');
 
     if($con ->connect_errno){
         echo "<p class='error'>* falla coneccion base de datos</p>";    
     }else{
-        $leeAmigos = "SELECT nombre, correo FROM amigos INNER JOIN usuarios ON amigos.id_usuario1 = usuario.Id_usuario WHERE amigos.id_usuario1 LIKE '$this->correo'";
+        $leeAmigos = "SELECT amigo FROM contactos WHERE Id_usuario LIKE '$this->correo'";
         $resultado = mysqli_query($con, $leeAmigos);
         $i=0;
     if($resultado){
         while($row = $resultado->fetch_array()){
-            $oJuego = new Juego($row['Id_juego'], $row['nombre'], $row['descripcion']);
-            $this->estanteria[$i]=$oJuego;
+            $oAmigo = new usuario($row['amigo']);
+            $this->amigos[$i]=$oAmigo;
             $i++;
-            $this->cantidad++;
+            $this->cantidadAmigos++;
             }
         }
         $con->close();
     }
+}
 
-    
+public function mostrarAmigos(){
+    for($i = 0; $i<$this->cantidadAmigos; $i++){
+        $this->amigos[$i]->mostrarInfor();
+    }
 }
 
 public function mostrarInfor(){

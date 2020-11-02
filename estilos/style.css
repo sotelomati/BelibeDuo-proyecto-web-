@@ -270,6 +270,11 @@ h5{
     cursor: pointer;
 }
 
+.botonesPersonal{
+    display: inline-flex;
+    justify-content: space-between;
+}
+
 
 
 

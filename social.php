@@ -10,25 +10,23 @@
             <div class="contenedorInfoUser">
             <?php
                 include 'objetos/usuarios.php';
-                $usuarios = new usuario($_SESSION['sesionLogin']);
+                
                         
             ?>
                 <div class="informacionPersonal">
                     <?php   
-                        $usuarios->mostrarInfor();
-                        $usuarios->setJuegos();
+                        
                     ?>
                 </div>
 
                 <div class="listaJuegos">
-                <?php $usuarios->getJuegos();?>
+                <?php ?>
 
                 </div>
 
                 <div class="listaAmigos">
                     <?php   
-                        $usuarios->traerAmigos();
-                        $usuarios->mostrarAmigos();
+                        
                     ?>
                 </div>
 
