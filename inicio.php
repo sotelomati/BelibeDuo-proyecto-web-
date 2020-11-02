@@ -10,7 +10,7 @@
             <div class="contenedorInfoUser">
                 <?php
                     include 'objetos/usuarios.php';
-                    $usuarios = new usuario($_SESSION['sesionLogin']);
+                    $usuarios = new usuario($_SESSION['sesionLogin'], 1);
                             
                 ?>
                 <div class="informacionPersonal">
@@ -27,12 +27,9 @@
 
                 <div class="informacionPersonal">
                     <?php   
-                        /*$usuarios->traerAmigos();
-                        $usuarios->mostrarAmigos();*/
-                        $usuarios->mostrarInfor();
-                        $usuarios->mostrarInfor();
-                        $usuarios->mostrarInfor();
-                        $usuarios->mostrarInfor();
+                        $usuarios->traerAmigos();
+                        $usuarios->mostrarAmigos();
+                       
                     ?>
                 </div>
 

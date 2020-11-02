@@ -10,7 +10,7 @@
             if(empty($contraseña)){
                 echo "<p class='error'>* Agrega tu contraseña </p>";
             }
-            $consultar = "SELECT contraseña FROM usuarios WHERE nombre like '$usuario'";
+            $consultar = "SELECT contraseña FROM usuarios WHERE nickname like '$usuario'";
             $contraBD = mysqli_fetch_row(consultaBD($consultar));
 
             if($contraBD['0'] ==  hash('sha256', $contraseña)){

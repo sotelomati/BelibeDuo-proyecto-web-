@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2020 a las 07:28:27
+-- Tiempo de generación: 02-11-2020 a las 20:38:51
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.33
 
@@ -24,13 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `amigos`
+-- Estructura de tabla para la tabla `aliados`
 --
 
-CREATE TABLE `amigos` (
+CREATE TABLE `aliados` (
   `id_usuario1` varchar(50) NOT NULL,
   `id_usuario2` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `aliados`
+--
+
+INSERT INTO `aliados` (`id_usuario1`, `id_usuario2`) VALUES
+('fcytuader@edu.gob.ar', 'prueba@gmail.com'),
+('flavia@hotmail.com', 'prueba@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -174,6 +182,7 @@ CREATE TABLE `telefonos` (
 
 INSERT INTO `telefonos` (`numero`, `cod_area`, `id_usuario`) VALUES
 ('4975141', '3100', 'fcytuader@edu.gob.ar'),
+('155004677', '3100', 'flavia@hotmail.com'),
 ('156227924', '3100', 'prueba@gmail.com');
 
 -- --------------------------------------------------------
@@ -225,7 +234,8 @@ INSERT INTO `ubicaciones` (`id_ubicacion`, `acronimo`, `nombre`) VALUES
 
 CREATE TABLE `usuarios` (
   `correo` varchar(50) NOT NULL,
-  `nombre` varchar(15) NOT NULL COMMENT 'nombre del usaurio',
+  `nickname` varchar(15) NOT NULL COMMENT 'nombre del usaurio',
+  `sexo` text DEFAULT NULL,
   `contraseña` varchar(150) NOT NULL,
   `id_ubicacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -234,9 +244,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`correo`, `nombre`, `contraseña`, `id_ubicacion`) VALUES
-('fcytuader@edu.gob.ar', 'fcytuader', '3372089fdaf1b8a60cc6790b01909bb6d0b6e6683a90645dee81bf451cf6ce68', 7),
-('prueba@gmail.com', 'prueba', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 7);
+INSERT INTO `usuarios` (`correo`, `nickname`, `sexo`, `contraseña`, `id_ubicacion`) VALUES
+('fcytuader@edu.gob.ar', 'fcytuader', 'Male', '3372089fdaf1b8a60cc6790b01909bb6d0b6e6683a90645dee81bf451cf6ce68', 7),
+('flavia@hotmail.com', 'flaappu', 'Female', '54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14', 7),
+('prueba@gmail.com', 'prueba', 'Male', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 7);
 
 -- --------------------------------------------------------
 
@@ -250,20 +261,13 @@ CREATE TABLE `usuario_juego` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuario_juego`
---
-
-INSERT INTO `usuario_juego` (`id_juego`, `id_usuario`) VALUES
-('4nite', 'prueba@gmail.com');
-
---
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `amigos`
+-- Indices de la tabla `aliados`
 --
-ALTER TABLE `amigos`
+ALTER TABLE `aliados`
   ADD PRIMARY KEY (`id_usuario1`,`id_usuario2`),
   ADD KEY `id_usuario2` (`id_usuario2`);
 
@@ -304,8 +308,8 @@ ALTER TABLE `ubicaciones`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`correo`),
-  ADD UNIQUE KEY `nombre` (`nombre`),
-  ADD UNIQUE KEY `ubicacion` (`correo`,`nombre`,`id_ubicacion`),
+  ADD UNIQUE KEY `nombre` (`nickname`),
+  ADD UNIQUE KEY `ubicacion` (`correo`,`nickname`,`id_ubicacion`),
   ADD KEY `id_ubicacion` (`id_ubicacion`);
 
 --
@@ -330,11 +334,11 @@ ALTER TABLE `ubicaciones`
 --
 
 --
--- Filtros para la tabla `amigos`
+-- Filtros para la tabla `aliados`
 --
-ALTER TABLE `amigos`
-  ADD CONSTRAINT `amigos_ibfk_1` FOREIGN KEY (`id_usuario1`) REFERENCES `usuarios` (`correo`),
-  ADD CONSTRAINT `amigos_ibfk_2` FOREIGN KEY (`id_usuario2`) REFERENCES `usuarios` (`correo`);
+ALTER TABLE `aliados`
+  ADD CONSTRAINT `aliados_ibfk_1` FOREIGN KEY (`id_usuario1`) REFERENCES `usuarios` (`correo`),
+  ADD CONSTRAINT `aliados_ibfk_2` FOREIGN KEY (`id_usuario2`) REFERENCES `usuarios` (`correo`);
 
 --
 -- Filtros para la tabla `juegos_categoria`

@@ -13,7 +13,12 @@
             <section class ="formMiddle">
                 <h5>Formulario Registro</h5>
                 <input class="controlsMiddle" type="text" name="usuario" value="" placeholder="Usuario" required>
+                <select class="controlsMiddle" name="sexo" id="sexo" placeholder="no sos un helicoptero" required>
+                <option>Male</option>
+                <option>Female</option>
+                </select>
                 <input class="controlsMiddle" type="text" name="correo" value="" placeholder="Correo" required>
+               
                 <input class="controlsTiny" type="number" name="codArea" value="" placeholder="codigo area Ej. (+0343)" required>
                 <input class="controlsMiddle" type="number" name="telefono" value="" placeholder="telefono" required>
                 <select class="controlsTiny" name="provincia" id="provincia" placeholder="provincia" required>

@@ -10,23 +10,21 @@
             <div class="contenedorInfoUser">
             <?php
                 include 'objetos/usuarios.php';
-                
-                        
+                $usuarios = new usuario($_SESSION['sesionLogin']);
+                $social = new gestorUsuarios($_SESSION['sesionLogin']);         
             ?>
                 <div class="informacionPersonal">
-                    <?php   
-                        
+                    <?php
+                        $usuarios->mostrarInfor();
+                    
                     ?>
                 </div>
 
-                <div class="listaJuegos">
-                <?php ?>
+                
 
-                </div>
-
-                <div class="listaAmigos">
+                <div class="listaSocial">
                     <?php   
-                        
+                        $social->mostrarUsuarios();
                     ?>
                 </div>
 
@@ -37,9 +35,7 @@
                 <a href="index.php" style="text-decoration:none" class="buttonsMiddle"><?php echo 'Agregar juegos'?></a>
                 </div>
 
-                <div class="buttonsMiddle">
-                <a style="margin-left= 300px;"href="social.php" style="text-decoration:none" class="buttonsMiddle"><?php echo 'Buscar Amigos'?></a>
-                </div>
+                
             </div>
             
 
