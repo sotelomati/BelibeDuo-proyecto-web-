@@ -43,21 +43,25 @@
             <?php
             $accion = "";
             $rutaAccion = "";
+            $imgLogin = "";
+            $imgLogout = "";
             if(isset($_SESSION['sesionMostrar'])){
                 if($_SESSION['sesionMostrar'] != "No logueado"){
                     $accion = "Logout";
                     $rutaAccion= "php/cerrarSesion.php";
+                    $imgLogin = '<img style="width: 35px;" src="estilos\images\extras\logOut.png" alt="">';
                 }
                 else{
                     $accion = "Login";
                     $rutaAccion= "login.php";
+                    $imgLogout = '<img style="width: 35px;" src="estilos\images\extras\logIn.png" alt="">';
                 }
                 
             }
             ?>
                 <ul class= dch>
                     <li style = "float: right; font-size: 15px;">Usuario:<a href= "inicio.php" style="font-size: 15px;"> <?php echo $_SESSION['sesionMostrar']; ?></a></li> <br>
-                    <li style = "float: right"><img style="width: 35px;" src="estilos\images\extras\logOut.png" alt=""><a href= <?php   echo $rutaAccion; ?> src=""> <?php echo $accion; ?> </a></li>
+                    <li style = "float: right"><?php echo $imgLogin; ?><a href= <?php   echo $rutaAccion; ?> src=""> <?php echo $accion; ?><?php echo $imgLogout; ?></a></li>
                 </ul>
         </nav>   
     </div>
