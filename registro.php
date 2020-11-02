@@ -57,6 +57,7 @@
                         $codArea = $_POST['codArea'];
                         $provincia = $_POST['provincia'];
                         $numeroReg = $_POST['telefono'];
+                        $sexo = $_POST['sexo'];
                         $contraseñaReg = hash('sha256', $_POST['contraseñaReg']);
                         $contraseñaReg2 = hash('sha256', $_POST['contraseñaReg2']);
                       

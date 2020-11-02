@@ -29,18 +29,8 @@
                 </div>
 
             </div>
+        </div>    
 
-            <div class="botonesPersonal">
-                <div class="buttonsMiddle">
-                <a href="index.php" style="text-decoration:none" class="buttonsMiddle"><?php echo 'Agregar juegos'?></a>
-                </div>
-
-                
-            </div>
-            
-
-            
-        </div>
         
     <?php require_once 'include/footer.php';?> 
 </body>

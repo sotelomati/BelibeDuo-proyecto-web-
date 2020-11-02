@@ -46,6 +46,7 @@ class Usuario{
     private $misJuegos;
     private $amigos; 
     private $cantidadAmigos;
+    private $imagen;
 
 
 public function __construct($nombreUser, $principal=0){
@@ -54,7 +55,7 @@ public function __construct($nombreUser, $principal=0){
     if($con ->connect_errno){
         echo "<p class='error'>* falla coneccion base de datos</p>";    
     }else{
-        $infoPersonal = "SELECT correo, ubicaciones.nombre, sexo FROM usuarios
+        $infoPersonal = "SELECT correo, ubicaciones.nombre, sexo, imagen FROM usuarios
         INNER JOIN ubicaciones
         on usuarios.id_ubicacion = ubicaciones.id_ubicacion
         WHERE usuarios.nickname LIKE '$nombreUser'";
@@ -62,6 +63,7 @@ public function __construct($nombreUser, $principal=0){
         $resultado = mysqli_query($con, $infoPersonal);
         $row = $resultado->fetch_array();
         
+        $this->imagen = $row['imagen'];
         $this->nombre = $nombreUser;
         $this->correo = $row[0];
         $this->sexo = $row['sexo'];
@@ -135,14 +137,16 @@ public function traerAmigos(){
 
 public function mostrarAmigos(){
     for($i = 0; $i<$this->cantidadAmigos; $i++){
-        $this->amigos[$i]->mostrarInfor();
+        $this->amigos[$i]->mostrarInforFriend();
     }
 }
 
 public function mostrarInfor(){
     echo'
     <div class="user">
-        <img src="estilos\images\avatar\avatar'.$this->sexo.'.png">
+        <div style="text-align:center;"><img src="estilos/images/avatar/'.$this->imagen.'">
+        <br>
+        <a href="#modal" style="text-decoration:none;" >Modificar Imagen</a></div>
         <p style="color: white;"> Nombre:'.$this->nombre.'</p>
         <p style="color: white;"> Correo:'.$this->correo.'</p>
         <p style="color: white;"> Ubicacion:'.$this->ubicacion.'</p>
@@ -150,39 +154,56 @@ public function mostrarInfor(){
     ';
 }
 
+public function mostrarInforFriend(){
+    echo'
+    <form class="framePersonal" action="objetos/procesos/deleteFriend.php" method="POST" >
+        <div class="user">
+            <div style="text-align:center;"><img src="estilos/images/avatar/'.$this->imagen.'"></div>
+            <div style="align: right;">
+            <input name="friendToDelete" type="hidden" value="'.$this->correo.'">
+            <input style=" right: 10px; width: 30px;"; class="butonDelete" src="estilos/images/extras/delete.png" type="image" name="deleteFriend">
+            </div>
+            <p style="color: white;"> Nombre:'.$this->nombre.'</p>
+            <p style="color: white;"> Correo:'.$this->correo.'</p>
+            <p style="color: white;"> Ubicacion:'.$this->ubicacion.'</p>
+        </div>
+    </form>   
+    ';
+}
+
+public function cambiarImagen($img){
+    //echo $img;
+    $conn = new mysqli('127.0.0.1','modifica','modificandoPA', 'trabajopractico1');
+    $sql = "UPDATE usuarios SET imagen='$img' WHERE correo = '$this->correo'";
+    $respuesta = mysqli_query($conn, $sql);
+    if($respuesta){
+        header("Location: inicio.php");
+    }
+    else{
+        echo '<script>alert("ERROR AL CARGAR LA IMAGEN")</scipt>';
+    }
+
+}
+
 public function mostrarAsFriend(){
     echo'
     <form class="frame" action="objetos/procesos/agregarAmigo.php" method="POST" >
         <div class="amigoSocial">
-            <img src="estilos\images\avatar\avatar'.$this->sexo.'.png">
+            <div style="text-align:center;"><img src="estilos/images/avatar/'.$this->imagen.'"></div>
+            <br>
             <p style="color: white;"> Nombre:'.$this->nombre.'</p>
             <p style="color: white;"> Correo:'.$this->correo.'</p>
             <p style="color: white;"> Ubicacion:'.$this->ubicacion.'</p>
             <input name="friendToAdd" type="hidden" value="'.$this->correo.'">
         </div>
-        <input class="buttons" type="submit" id="'.$this->acronimo.'" name="addFriend" value="Agregar">
+        <div style="align: right;">
+        <input action="" style=" right: 10px; width: 30px;"; class="butonDelete" method="POST" src="estilos/images/extras/add.png" type="image" name="addFriend">
+        </div>
     </form>
     ';
 }
 
 
-public function deleteJuego($juegoToEliminar){
-    $eliminar =$this->misJuegos->deleteJuego($juegoToEliminar);
-    if($eliminar != NULL){
-        $con = new mysqli('127.0.0.1','modifica','modificandoPA', 'trabajopractico1');
-        if($con ->connect_errno){
-            echo "<p class='error'>* falla coneccion base de datos</p>";    
-        }else{
-            $eliminaJuego = "DELETE FROM `usuario_juego` WHERE usuario_juego.id_juego LIKE '$eliminar' AND usuario_juego.id_usuario LIKE '$this->correo'";
-            $resultado = mysqli_query($con, $eliminaJuego);
-        }
-        $con->close();
-        echo' <script>alert("juego eliminado con exito");</script>';
-    }else{
-        echo'<script>alert("El juego no se encutra en la lista");</script>';
-    }
-    
-}
 
 
 }

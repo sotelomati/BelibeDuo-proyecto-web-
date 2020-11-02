@@ -57,7 +57,7 @@
             ?>
                 <ul class= dch>
                     <li style = "float: right; font-size: 15px;">Usuario:<a href= "inicio.php" style="font-size: 15px;"> <?php echo $_SESSION['sesionMostrar']; ?></a></li> <br>
-                    <li style = "float: right"><a href= <?php   echo $rutaAccion; ?>> <?php echo $accion; ?> </a></li>
+                    <li style = "float: right"><img style="width: 35px;" src="estilos\images\extras\logOut.png" alt=""><a href= <?php   echo $rutaAccion; ?> src=""> <?php echo $accion; ?> </a></li>
                 </ul>
         </nav>   
     </div>

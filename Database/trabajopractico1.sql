@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2020 a las 20:38:51
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.2.33
+-- Tiempo de generación: 02-11-2020 a las 22:47:22
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,8 +37,7 @@ CREATE TABLE `aliados` (
 --
 
 INSERT INTO `aliados` (`id_usuario1`, `id_usuario2`) VALUES
-('fcytuader@edu.gob.ar', 'prueba@gmail.com'),
-('flavia@hotmail.com', 'prueba@gmail.com');
+('sotelomati@gmail.com', 'schmidt.octavio@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -182,8 +181,8 @@ CREATE TABLE `telefonos` (
 
 INSERT INTO `telefonos` (`numero`, `cod_area`, `id_usuario`) VALUES
 ('4975141', '3100', 'fcytuader@edu.gob.ar'),
-('155004677', '3100', 'flavia@hotmail.com'),
-('156227924', '3100', 'prueba@gmail.com');
+('3434619341', '3100', 'schmidt.octavio@gmail.com'),
+('156227924', '3100', 'sotelomati@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -237,17 +236,18 @@ CREATE TABLE `usuarios` (
   `nickname` varchar(15) NOT NULL COMMENT 'nombre del usaurio',
   `sexo` text DEFAULT NULL,
   `contraseña` varchar(150) NOT NULL,
-  `id_ubicacion` int(11) NOT NULL
+  `id_ubicacion` int(11) NOT NULL,
+  `imagen` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`correo`, `nickname`, `sexo`, `contraseña`, `id_ubicacion`) VALUES
-('fcytuader@edu.gob.ar', 'fcytuader', 'Male', '3372089fdaf1b8a60cc6790b01909bb6d0b6e6683a90645dee81bf451cf6ce68', 7),
-('flavia@hotmail.com', 'flaappu', 'Female', '54d5cb2d332dbdb4850293caae4559ce88b65163f1ea5d4e4b3ac49d772ded14', 7),
-('prueba@gmail.com', 'prueba', 'Male', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 7);
+INSERT INTO `usuarios` (`correo`, `nickname`, `sexo`, `contraseña`, `id_ubicacion`, `imagen`) VALUES
+('fcytuader@edu.gob.ar', 'fcytuader', 'Male', '3372089fdaf1b8a60cc6790b01909bb6d0b6e6683a90645dee81bf451cf6ce68', 7, 'default.png'),
+('schmidt.octavio@gmail.com', 'octavio', 'Male', '688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6', 7, 'morty.png'),
+('sotelomati@gmail.com', 'matias', 'Male', '688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6', 7, 'rick.png');
 
 -- --------------------------------------------------------
 
@@ -259,6 +259,20 @@ CREATE TABLE `usuario_juego` (
   `id_juego` varchar(5) NOT NULL,
   `id_usuario` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario_juego`
+--
+
+INSERT INTO `usuario_juego` (`id_juego`, `id_usuario`) VALUES
+('4HONO', 'schmidt.octavio@gmail.com'),
+('AOE2', 'schmidt.octavio@gmail.com'),
+('CSGO', 'schmidt.octavio@gmail.com'),
+('Dota2', 'schmidt.octavio@gmail.com'),
+('LOL', 'schmidt.octavio@gmail.com'),
+('LOL', 'sotelomati@gmail.com'),
+('TOPO', 'schmidt.octavio@gmail.com'),
+('TOPO', 'sotelomati@gmail.com');
 
 --
 -- Índices para tablas volcadas

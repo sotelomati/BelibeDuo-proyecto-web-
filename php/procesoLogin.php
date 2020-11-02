@@ -42,8 +42,8 @@
                         $id_ubicacion = mysqli_query($con, $buscaIdUbicacion);
                         $fila = mysqli_fetch_row($id_ubicacion);
                         
-
-                        $agregar = "INSERT INTO usuarios(correo, nombre, contraseña, id_ubicacion) VALUES ('$correo', '$usuarioNuevo', '$contraseñaReg', '$fila[0]')";;
+                        $img = "default.png";
+                        $agregar = "INSERT INTO usuarios(correo, nickname, contraseña, id_ubicacion, sexo, imagen) VALUES ('$correo', '$usuarioNuevo', '$contraseñaReg', '$fila[0]', '$sexo', '$img')";
                         $resultado = mysqli_query($con, $agregar);
                         if($resultado){
                             echo "<script>alert('se ha registrado el usuario');</script>";

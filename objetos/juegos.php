@@ -124,7 +124,8 @@ class Juego{
         $urlimagen= "estilos/images/imagenjuegos/".$this->acronimo.".jpg";
         echo '
         <form class="frame" action="objetos/procesos/agregarJuego.php" method="POST" >
-            <div class="juego" style= "background-image: url('.$urlimagen.')">
+            <div class="juego" style= "background-image: url('.$urlimagen.'); background-size: cover;
+            background-position: center;">
                 <h1>'.$this->nombre.'</h1>
                 <p>'.$this->descripcion.'</p>
                 <input name="juegoToAdd" type="hidden" value="'.$this->acronimo.'">';
