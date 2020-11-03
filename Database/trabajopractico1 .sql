@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2020 a las 22:47:22
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.4.8
+-- Tiempo de generación: 03-11-2020 a las 01:00:37
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,7 +37,10 @@ CREATE TABLE `aliados` (
 --
 
 INSERT INTO `aliados` (`id_usuario1`, `id_usuario2`) VALUES
-('sotelomati@gmail.com', 'schmidt.octavio@gmail.com');
+('fcytuader@edu.gob.ar', 'sotelomati@gmail.com'),
+('schmidt.octavio@gmail.com', 'flaviacrolla@hotmail.es'),
+('schmidt.octavio@gmail.com', 'sotelomati@gmail.com'),
+('sotelomati@gmail.com', 'flaviacrolla@hotmail.es');
 
 -- --------------------------------------------------------
 
@@ -181,6 +184,7 @@ CREATE TABLE `telefonos` (
 
 INSERT INTO `telefonos` (`numero`, `cod_area`, `id_usuario`) VALUES
 ('4975141', '3100', 'fcytuader@edu.gob.ar'),
+('3435001122', '3100', 'flaviacrolla@hotmail.es'),
 ('3434619341', '3100', 'schmidt.octavio@gmail.com'),
 ('156227924', '3100', 'sotelomati@gmail.com');
 
@@ -246,6 +250,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`correo`, `nickname`, `sexo`, `contraseña`, `id_ubicacion`, `imagen`) VALUES
 ('fcytuader@edu.gob.ar', 'fcytuader', 'Male', '3372089fdaf1b8a60cc6790b01909bb6d0b6e6683a90645dee81bf451cf6ce68', 7, 'default.png'),
+('flaviacrolla@hotmail.es', 'flaapu', 'Female', '00762934084c61ecfe510385161fb6202717e9ab0375ce86212cfab59b0d2461', 10, 'caca.png'),
 ('schmidt.octavio@gmail.com', 'octavio', 'Male', '688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6', 7, 'morty.png'),
 ('sotelomati@gmail.com', 'matias', 'Male', '688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6', 7, 'rick.png');
 
@@ -266,13 +271,13 @@ CREATE TABLE `usuario_juego` (
 
 INSERT INTO `usuario_juego` (`id_juego`, `id_usuario`) VALUES
 ('4HONO', 'schmidt.octavio@gmail.com'),
+('4nite', 'flaviacrolla@hotmail.es'),
 ('AOE2', 'schmidt.octavio@gmail.com'),
+('CSGO', 'flaviacrolla@hotmail.es'),
 ('CSGO', 'schmidt.octavio@gmail.com'),
 ('Dota2', 'schmidt.octavio@gmail.com'),
 ('LOL', 'schmidt.octavio@gmail.com'),
-('LOL', 'sotelomati@gmail.com'),
-('TOPO', 'schmidt.octavio@gmail.com'),
-('TOPO', 'sotelomati@gmail.com');
+('TOPO', 'schmidt.octavio@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -380,6 +385,14 @@ ALTER TABLE `usuario_juego`
   ADD CONSTRAINT `usuario_juego_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`correo`),
   ADD CONSTRAINT `usuario_juego_ibfk_2` FOREIGN KEY (`id_juego`) REFERENCES `juegos` (`Id_juego`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
+
+
+--
+-- Usuarios
+--
+GRANT SELECT, INSERT, UPDATE, DELETE, FILE ON *.* TO `elimina`@`127.0.0.1` IDENTIFIED BY PASSWORD '*BB946AC671632A82D9F669FE8496BC50248D73E4';
+GRANT SELECT ON *.* TO `lectura`@`127.0.0.1` IDENTIFIED BY PASSWORD '*E8DE42E2D8351950DA1C5F096C4EE95664DC3898';
+GRANT SELECT, INSERT, UPDATE, ALTER ON *.* TO `modifica`@`127.0.0.1` IDENTIFIED BY PASSWORD '*758B5CAE4CB7A661BF102C857C44AF01C8DE188C';
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

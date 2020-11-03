@@ -30,7 +30,7 @@
                 </div>
                 <div class="row">
                     <img src="estilos/images/steam.png">   
-                    <label>steam de mati</label>
+                    <label>DnCwFarruco</label>
                 </div>
                 <div class="row">
                     <img src="estilos/images/lol.png">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="row">
                     <img src="estilos/images/lol.png">
-                    <label>lol de mati</label>
+                    <label>DnCwFarruco</label>
                 </div>
 
 
@@ -57,7 +57,7 @@
 
                 <div class="row2">
                     <img src="estilos/images/contact.png">
-                     <label>maildelapagina@gmail.com</label>
+                     <label>BelieveDuo@gmail.com</label>
                 </div>
 
             </div>
@@ -69,7 +69,7 @@
     <div class="container-footer">
            <div class="footer">
                 <div class="copyright">
-                    © 2020 Todos los Derechos Reservados | <a href="">NOMBREPAG</a>
+                    © 2020 Todos los Derechos Reservados | <a href="">BELIEVEDUO</a>
                 </div>
 
                 <div class="information">

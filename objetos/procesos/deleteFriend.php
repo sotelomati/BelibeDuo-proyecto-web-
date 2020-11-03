@@ -1,6 +1,5 @@
 <?php
 session_start();
-//echo $_POST['juegoToDelete'];
 echo $_SESSION['correoLogin'];
 if(isset($_POST['friendToDelete'])){
     $elimino =$_POST['friendToDelete'];
